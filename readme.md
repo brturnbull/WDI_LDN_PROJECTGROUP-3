@@ -1,3 +1,3 @@
 #Project 3
 
-Elliot Yandzio
+Elliot Yandzio Bridget Turnbull Filippos Antoniadis
