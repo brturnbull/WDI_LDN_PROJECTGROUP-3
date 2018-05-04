@@ -7,11 +7,14 @@ import 'satellizer';
 import './scss/style.scss';
 //-------------------------Modules----------------------------------------------
 import Router from './config/router';
+import Auth from './config/auth';
 // AUTH HERE
 //----------------------Controllers---------------------------------------------
-
+import RegisterCtrl from './controllers/auth/register';
 //-----------------------Models--------------------------------------------------
 // import User from './models/user';
 //-----------------------Module-------------------------------------------------
-angular.module('moodify', ['ui.router'])
-  .config(Router);
+angular.module('moodify', ['ui.router', 'satellizer'])
+  .config(Router)
+  .config(Auth)
+  .controller('RegisterCtrl', RegisterCtrl);

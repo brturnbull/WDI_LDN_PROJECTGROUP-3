@@ -16,7 +16,8 @@ function Router($stateProvider, $urlRouterProvider) {
   //registration of user
     .state('register', {
       url: '/register',
-      templateUrl: 'views/auth/register.html'
+      templateUrl: 'views/auth/register.html',
+      controller: 'RegisterCtrl as register'
     })
   //showing all users
     .state('usersIndex',{
