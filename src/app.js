@@ -13,5 +13,5 @@ import Router from './config/router';
 //-----------------------Models--------------------------------------------------
 // import User from './models/user';
 //-----------------------Module-------------------------------------------------
-angular.module('spofy', ['ui.router'])
+angular.module('moodify', ['ui.router'])
   .config(Router);
