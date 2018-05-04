@@ -7,11 +7,13 @@ import 'satellizer';
 import './scss/style.scss';
 //-------------------------Modules----------------------------------------------
 import Router from './config/router';
-// AUTH HERE
+import Auth from './config/auth';
 //----------------------Controllers---------------------------------------------
-
+import LoginCtrl from './controllers/auth/login';
 //-----------------------Models--------------------------------------------------
 // import User from './models/user';
 //-----------------------Module-------------------------------------------------
-angular.module('spofy', ['ui.router'])
-  .config(Router);
+angular.module('spofy', ['ui.router', 'satellizer'])
+  .config(Router)
+  .config(Auth)
+  .controller('LoginCtrl', LoginCtrl);

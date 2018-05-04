@@ -4,14 +4,15 @@ function Router($stateProvider, $urlRouterProvider) {
   $stateProvider
   //landing page
     .state('home',{
-      url: '/home',
-      templateUrl: 'views/home.html'
+      url: '/',
+      templateUrl: 'views/home.html',
+      controller: 'LoginCtrl as login'
     })
   //login of user
     .state('login', {
       url: '/login',
-      templateUrl: 'views/auth/login.html'
-      // controller: 'insert controller'
+      templateUrl: 'views/auth/login.html',
+      controller: 'LoginCtrl as login'
     })
   //registration of user
     .state('register', {
@@ -41,6 +42,6 @@ function Router($stateProvider, $urlRouterProvider) {
       templateUrl: 'views/moods/show.html'
       // controller: 'insert controller'
     });
-  $urlRouterProvider.otherwise('/home');
+  $urlRouterProvider.otherwise('/');
 }
 export default Router;
