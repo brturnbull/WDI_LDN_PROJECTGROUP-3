@@ -16,8 +16,30 @@ function usersShow(req, res, next){
     })
     .catch(next);
 }
+//-----------DELETE-------------------------------------------------- ----------
+function usersDelete(req, res, next){
+  User
+    .findByIdAndRemove(req.params.id)
+    .then(user => {
+      if(!user) return res.sendStatus(404);
+      return user.remove();
+    })
+    .then(() => res.sendStatus(204))
+    .catch(next);
+}
+//-----------UPDATE--------------------------------------------------------- ---
+function usersUpdate(req, res, next){
+  User
+    .findById(req.params.id)
+    .then(user => Object.assign(user, req.body))
+    .then(user => user.save())
+    .then(user => res.json(user))
+    .catch(next);
+}
 //------------------------------------------------------------------------------
 module.exports = {
   index: usersIndex,
-  show: usersShow
+  show: usersShow,
+  delete: usersDelete,
+  update: usersUpdate
 };

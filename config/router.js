@@ -5,9 +5,12 @@ const auth = require('../controllers/auth');
 router.route('/users')
   .get(users.index);
 
-router.post('/register', auth.register);
-
 router.route('/users/:id')
-  .get(users.show);
+  .get(users.show)
+  .delete(users.delete)
+  .put(users.update);
+
+router.route('/register')
+  .post(auth.register);
 
 module.exports = router;

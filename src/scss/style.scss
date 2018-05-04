@@ -1,4 +1,44 @@
 @import '~bulma/sass/utilities/initial-variables';
-$primary: #87017a;
+
+$primary: red;
+$card-background-color: black;
+$title-color: white;
+$subtitle-color: white;
+$title-size: $size-6;
 
 @import '~bulma';
+@media screen and (max-width: $tablet - 1px){ //use of tablet from bulma
+  .card-content{
+    height:auto;
+  }
+
+}
+.card{
+  padding: 20px;
+  border-radius: 5px;
+  color: white;
+}
+
+.card-image {
+  height: 300px;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+.card-content {
+  height: 150px;
+}
+
+h1{
+  text-align: center;
+  font-size: 25px;
+}
+navbar-brand{
+  background-color: grey;
+}
+.column {
+  padding: 20px;
+}
+.image.is-4by3 img {
+  border-radius: 20px;
+}

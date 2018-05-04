@@ -11,10 +11,15 @@ import Auth from './config/auth';
 // AUTH HERE
 //----------------------Controllers---------------------------------------------
 import RegisterCtrl from './controllers/auth/register';
+import UsersIndexCtrl from './controllers/users/index';
+import UsersShowCtrl from './controllers/users/show';
 //-----------------------Models--------------------------------------------------
-// import User from './models/user';
+import User from './models/user';
 //-----------------------Module-------------------------------------------------
 angular.module('moodify', ['ui.router', 'satellizer'])
   .config(Router)
   .config(Auth)
-  .controller('RegisterCtrl', RegisterCtrl);
+  .controller('RegisterCtrl', RegisterCtrl)
+  .controller('UsersIndexCtrl', UsersIndexCtrl)
+  .controller('UsersShowCtrl', UsersShowCtrl)
+  .service('User', User);
