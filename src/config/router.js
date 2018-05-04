@@ -17,7 +17,8 @@ function Router($stateProvider, $urlRouterProvider) {
   //registration of user
     .state('register', {
       url: '/register',
-      templateUrl: 'views/auth/register.html'
+      templateUrl: 'views/auth/register.html',
+      controller: 'RegisterCtrl as register'
     })
   //showing all users
     .state('usersIndex',{
@@ -30,16 +31,15 @@ function Router($stateProvider, $urlRouterProvider) {
       templateUrl: 'views/users/show.html'
       // controller: 'insert controller'
     })
-  //currently logged in user show
-    .state('usersProfileShow',{
-      url: '/users/user/:id',
-      templateUrl: 'views/users/user.html'
-      // controller: 'insert controller'
-    })
   //mood show with playlist
     .state('moodsShow',{
       url: '/moods',
       templateUrl: 'views/moods/show.html'
+      // controller: 'insert controller'
+    })
+    .state('moodsNew',{
+      url: '/moods/new',
+      templateUrl: 'views/moods/new.html'
       // controller: 'insert controller'
     });
   $urlRouterProvider.otherwise('/');

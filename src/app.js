@@ -8,12 +8,15 @@ import './scss/style.scss';
 //-------------------------Modules----------------------------------------------
 import Router from './config/router';
 import Auth from './config/auth';
+// AUTH HERE
 //----------------------Controllers---------------------------------------------
+import RegisterCtrl from './controllers/auth/register';
 import LoginCtrl from './controllers/auth/login';
 //-----------------------Models--------------------------------------------------
 // import User from './models/user';
 //-----------------------Module-------------------------------------------------
-angular.module('spofy', ['ui.router', 'satellizer'])
+angular.module('moodify', ['ui.router', 'satellizer'])
   .config(Router)
   .config(Auth)
+  .controller('RegisterCtrl', RegisterCtrl)
   .controller('LoginCtrl', LoginCtrl);
