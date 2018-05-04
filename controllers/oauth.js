@@ -28,9 +28,9 @@ function spotify(req,res,next) {
         qs: {
           access_token: response.access_token
         },
-        // headers: {
-        //   Authorization: 'Bearer ' + response.code
-        // },
+        headers: {
+          Authorization: 'Bearer ' + response.code
+        },
         json: true
       });
     })
