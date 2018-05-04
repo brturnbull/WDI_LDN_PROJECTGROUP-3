@@ -16,7 +16,6 @@ function usersShow(req, res, next){
     })
     .catch(next);
 }
-
 //------------------------------------------------------------------------------
 module.exports = {
   index: usersIndex,
