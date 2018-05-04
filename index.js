@@ -1,7 +1,7 @@
 const express = require('express');
 const app = express();
-const bodyParser = require('body-parser');
 const mongoose = require('mongoose');
+const bodyParser = require('body-parser');
 //extra--error handler in here if we need.
 
 //Router and DB connect
