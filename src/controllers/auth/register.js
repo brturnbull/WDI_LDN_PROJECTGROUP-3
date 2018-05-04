@@ -4,6 +4,7 @@ function RegisterCtrl($auth, $state) {
   this.data = {};
 
   function handleRegister() {
+    console.log(this.data);
     $auth.signup(this.data)
       .then(() => $state.go('login'));
   }
