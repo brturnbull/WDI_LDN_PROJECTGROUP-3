@@ -14,7 +14,6 @@ mongoose.connect(dbURI, (err, db) => {
       email: 'a@a.com',
       password: 'gop',
       passwordConfirmation: 'gop',
-      spotifyId: '00000',
       bio: 'Putting matrix references in my code in my spare time',
       profile: 'https://ia.media-imdb.com/images/M/MV5BNzQzOTk3OTAtNDQ0Zi00ZTVkLWI0MTEtMDllZjNkYzNjNTc4L2ltYWdlXkEyXkFqcGdeQXVyNjU0OTQ0OTY@._V1_UX182_CR0,0,182,268_AL_.jpg'
     },{
@@ -22,7 +21,6 @@ mongoose.connect(dbURI, (err, db) => {
       email: 'b@b.com',
       password: 'gop',
       passwordConfirmation: 'gop',
-      spotifyId: '2222',
       bio: 'wakkas',
       profile: 'https://ia.media-imdb.com/images/M/MV5BNzQzOTk3OTAtNDQ0Zi00ZTVkLWI0MTEtMDllZjNkYzNjNTc4L2ltYWdlXkEyXkFqcGdeQXVyNjU0OTQ0OTY@._V1_UX182_CR0,0,182,268_AL_.jpg'
     },{
@@ -30,7 +28,6 @@ mongoose.connect(dbURI, (err, db) => {
       email: 'e@e.com',
       password: 'gop',
       passwordConfirmation: 'gop',
-      spotifyId: '3333',
       bio: 'Pre lunch ?',
       profile: 'https://ia.media-imdb.com/images/M/MV5BNzQzOTk3OTAtNDQ0Zi00ZTVkLWI0MTEtMDllZjNkYzNjNTc4L2ltYWdlXkEyXkFqcGdeQXVyNjU0OTQ0OTY@._V1_UX182_CR0,0,182,268_AL_.jpg'
     }])
