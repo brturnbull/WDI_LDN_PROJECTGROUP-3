@@ -6,12 +6,9 @@ const oauth = require('../controllers/oauth');
 router.route('/users')
   .get(users.index);
 
-<<<<<<< HEAD
 router.post('/register', auth.register);
 router.post('/login', auth.login);
 
-=======
->>>>>>> development
 router.route('/users/:id')
   .get(users.show)
   .delete(users.delete)
