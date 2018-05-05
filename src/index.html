@@ -29,6 +29,8 @@
       </div>
     </nav>
 
+    <ui-view ng-if="main.isHome"></ui-view>
+
     <section class='section' ng-if="!main.isHome">
       <div class="container" ui-view></div>
     </section>
