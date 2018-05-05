@@ -14,8 +14,8 @@ router.route('/users/:id')
   .delete(users.delete)
   .put(users.update);
 
-router.route('/register')
-  .post(auth.register);
+// router.route('/register')
+//   .post(auth.register);
 
 router.post('/spotify', oauth.spotify);
 
