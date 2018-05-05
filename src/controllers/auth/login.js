@@ -3,7 +3,8 @@ LoginCtrl.$inject = ['$auth', '$state'];
 function LoginCtrl($auth, $state) {
 
   function handleLogin() {
-    console.log('clicked');
+    $auth.login(this.data)
+      .then(() => $state.go('usersIndex'));
   }
 
   function authenticate(provider) {
