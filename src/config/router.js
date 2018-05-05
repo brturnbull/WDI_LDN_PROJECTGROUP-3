@@ -23,13 +23,14 @@ function Router($stateProvider, $urlRouterProvider) {
   //showing all users
     .state('usersIndex',{
       url: '/users',
-      templateUrl: 'views/users/index.html'
+      templateUrl: 'views/users/index.html',
+      controller: 'UsersIndexCtrl as UsersIndex'
     })
-  //showing the clicked user?
+  //showing the clicked user
     .state('usersShow',{
       url: '/users/:id',
-      templateUrl: 'views/users/show.html'
-      // controller: 'insert controller'
+      templateUrl: 'views/users/show.html',
+      controller: 'UsersShowCtrl as UsersShow'
     })
   //mood show with playlist
     .state('moodsShow',{
