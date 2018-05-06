@@ -11,7 +11,7 @@ function moodsNewCtrl() {
     const possiblePlaylistIds = playlistIds[mood];
     const randomPlaylistId = possiblePlaylistIds[Math.floor(Math.random() * possiblePlaylistIds.length)];
 
-    console.log(randomPlaylistId);
+    // make a ajax request to /api/playlists/randomPlaylistId
   }
 
   this.handleCreate = handleCreate;

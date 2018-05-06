@@ -21,7 +21,7 @@ function spotify(req,res,next) {
     json: true
   })
     .then(response => {
-      console.log(response)
+      // console.log(response)
       return rp({
         method: 'GET',
         url: 'https://api.spotify.com/v1/me',
