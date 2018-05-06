@@ -10,7 +10,6 @@ const userSchema = new mongoose.Schema({
   bio: {type: String},
   profile: {type: String}
 });
-
 //moongoose validator
 //------------------------------------------------------------------------------
 

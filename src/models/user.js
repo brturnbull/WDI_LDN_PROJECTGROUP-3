@@ -1,5 +1,5 @@
 User.$inject = ['$http'];
-
+//------------------------------------------------------------------------------
 function User($http){
   function find(){
     return $http.get('/api/users');
@@ -18,5 +18,5 @@ function User($http){
   this.removeById = removeById;
   this.updateById = updateById;
 }
-
+//------------------------------------------------------------------------------
 export default User;

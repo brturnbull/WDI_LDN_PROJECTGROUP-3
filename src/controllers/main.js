@@ -1,5 +1,5 @@
 MainCtrl.$inject = ['$transitions', '$auth', '$state'];
-
+//-----------------------------------------------------------------------------
 function MainCtrl($transitions, $auth, $state) {
   this.navBarIsOpen = false;
   this.isHome = true;
@@ -10,7 +10,7 @@ function MainCtrl($transitions, $auth, $state) {
     this.isHome = transition.to().name === 'home';
     this.navBarIsOpen = false;
   });
-
+  //-----------------------------------------------------------------------------
   function toggleNav() {
     this.navBarIsOpen = !this.navBarIsOpen;
   }
@@ -19,10 +19,10 @@ function MainCtrl($transitions, $auth, $state) {
     $auth.logout();
     $state.go('home');
   }
-
+  //-----------------------------------------------------------------------------
   this.toggleNav = toggleNav;
   this.logout = logout;
-
+//-----------------------------------------------------------------------------
 }
-
+//-----------------------------------------------------------------------------
 export default MainCtrl;

@@ -1,0 +1,15 @@
+<form ng-submit="UsersEdit.buttonUpdate()">
+  <div class="field">
+    <label for="username">Username</label>
+    <input class="input" placeholder="Username" name="username" ng-model="UsersEdit.user.username" />
+  </div>
+  <div class="field">
+    <label for="bio">Bio</label>
+    <input class="input" placeholder="Bio" name="bio" ng-model="UsersEdit.user.bio" />
+  </div>
+  <div class="field">
+    <label for="profile">Profile</label>
+    <input class="input" placeholder="Profile picture" name="picture" ng-model="UsersEdit.user.profile" />
+  </div>
+  <button class="button is-primary">Submit</button>
+</form>
