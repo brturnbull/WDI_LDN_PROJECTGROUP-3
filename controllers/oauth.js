@@ -28,12 +28,38 @@ function spotify(req,res,next) {
         qs: {
           access_token: response.access_token
         },
-        // headers: {
-        //   Authorization: 'Bearer ' + response.code
-        // },
         json: true
       });
     })
+    .then(response => {
+      //find usewr by either email or spotify id
+      return User.findOne({ $or: [{email: response.email}, {spotifyId: response.id}] })
+        .then(user => {
+          if(!user) {
+            // if they are not a user then create a new account with their username and email
+            user = new User({
+              username: response.display_name,
+              email: response.email
+            });
+          }
+          //adding spotify id regardless -
+          // outside the function so the user
+          user.spotifyId = response.id;
+
+          return user.save();
+        });
+    })
+    .then(user => {
+      // stolen from auth here-----------------------
+      const token = jwt.sign({ sub: user._id }, secret, { expiresIn: '6h' });
+      res.json({
+        message: `Welcome back ${user.username}!`,
+        token,
+        user
+      });
+      // to here! ---------------------------
+    })
+    .then()
     .catch(next);
   // req.body should contain a code { code: 'kfjhfksdahfdskjhfkdshfksdh' }
   // POST https://accounts.spotify.com/api/token
