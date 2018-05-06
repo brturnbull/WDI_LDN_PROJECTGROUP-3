@@ -35,13 +35,18 @@ function Router($stateProvider, $urlRouterProvider) {
   //mood show with playlist
     .state('moodsShow',{
       url: '/moods',
-      templateUrl: 'views/moods/show.html'
-      // controller: 'insert controller'
+      templateUrl: 'views/moods/show.html',
+      controller: 'SpotifyCtrl as spotify'
+    })
+    .state('playlistShow', {
+      url: 'playlists/:playlistId',
+      template: 'views/playlists/show.html',
+      controller: 'SpotifyCtrl as spotify'
     })
     .state('moodsNew',{
       url: '/moods/new',
-      templateUrl: 'views/moods/new.html'
-      // controller: 'insert controller'
+      templateUrl: 'views/moods/new.html',
+      controller: 'MoodsNewCtrl as moodsNew'
     });
   $urlRouterProvider.otherwise('/');
 }

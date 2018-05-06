@@ -21,6 +21,7 @@
       </div>
       <div class="navbar-menu" ng-class="{ 'is-active': main.navBarIsOpen }">
         <div class="navbar-end">
+          <a class="navbar-item" ui-sref="usersIndex">Find your playlist</a>
           <a class="navbar-item" ui-sref="usersIndex">Community</a>
           <a class="navbar-item" ng-click="main.logout()" ng-if="main.isAuthenticated()">Logout</a>
           <a class="navbar-item" ui-sref="register" ng-if='!main.isAuthenticated()'>Register</a>
