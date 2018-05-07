@@ -8,8 +8,11 @@
         <div class="text-wrapper">
         <p class="title is-5" >{{UsersShow.User.username}}
         <p class="subtitle is-6">{{UsersShow.User.bio}}
+        <a ui-sref="usersEdit({ id: UsersShow.User._id })" class="button is-primary">Edit</a>
         </div>
       </div>
+
+      <button ng-click="UsersShow.buttonDelete()">Delete</button>
     </div>
   </div>
 </div>

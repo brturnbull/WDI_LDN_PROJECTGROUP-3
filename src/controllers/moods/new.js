@@ -14,7 +14,6 @@ function MoodsNewCtrl($http) {
   };
 
 
-https://open.spotify.com/user/spotify/playlist/37i9dQZF1DX3PIPIT6lEg5?si=yAfQQ5GbR8uwyDc_Kmz1bw
   function handleCreate() {
     // the mood chosen in the drop down
     const mood = this.data.mood;
