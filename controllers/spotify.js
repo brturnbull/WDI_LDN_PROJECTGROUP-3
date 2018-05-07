@@ -27,7 +27,7 @@ function playlist(req, res, next) {
     })
     .then(response => {
       res.json(response);
-      
+
     })
     .catch(next);
 }

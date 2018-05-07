@@ -4,7 +4,7 @@ const jwt = require('jsonwebtoken');
 const { secret } = require('../config/environment');
 const clientId = process.env.SPOTIFY_CLIENT_ID;
 const clientSecret = process.env.SPOTIFY_CLIENT_SECRET;
-
+//------------------------------------------------------------------------------
 function spotify(req,res,next) {
   console.log(req.body);
   rp({
@@ -80,8 +80,5 @@ function spotify(req,res,next) {
   // once you have the profile store it in the database
   // create a token using the newly created user's id, send it back to the client
 }
-
-
-module.exports = {
-  spotify
-};
+//------------------------------------------------------------------------------
+module.exports = {spotify};
