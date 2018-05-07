@@ -40,8 +40,8 @@ function Router($stateProvider, $urlRouterProvider) {
     })
     .state('moodsNew',{
       url: '/moods/new',
-      templateUrl: 'views/moods/new.html'
-      // controller: 'insert controller'
+      templateUrl: 'views/moods/new.html',
+      controller: 'MoodsNewCtrl as moodsNew'
     });
   $urlRouterProvider.otherwise('/');
 }

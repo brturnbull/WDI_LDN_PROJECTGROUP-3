@@ -2,6 +2,7 @@ const router = require('express').Router();
 const users = require('../controllers/users');
 const auth = require('../controllers/auth');
 const oauth = require('../controllers/oauth');
+const spotify = require('../controllers/spotify');
 //------------------------------------------------------------------------------
 router.route('/users')
   .get(users.index);
@@ -14,9 +15,8 @@ router.route('/users/:id')
   .delete(users.delete)
   .put(users.update);
 
-// router.route('/register')
-//   .post(auth.register);
-
-router.post('/spotify', oauth.spotify);
+router.route('/spotify')
+  .post(oauth.spotify)
+  .get(spotify.playlist);
 
 module.exports = router;
