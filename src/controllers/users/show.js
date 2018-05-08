@@ -12,7 +12,6 @@ function UsersShowCtrl(User, $state, $auth){
   }
 
   function isCurrentUser() {
-    console.log(User);
     return this.User && $auth.getPayload().sub === this.User._id;
   }
   this.buttonDelete = buttonDelete;
