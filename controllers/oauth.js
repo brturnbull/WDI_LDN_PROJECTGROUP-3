@@ -8,6 +8,7 @@ const clientSecret = process.env.SPOTIFY_CLIENT_SECRET;
 function spotify(req,res,next) {
 
   rp({
+    //
     method: 'POST',
     url: 'https://accounts.spotify.com/api/token',
     form: {
@@ -25,6 +26,7 @@ function spotify(req,res,next) {
       return rp({
         method: 'GET',
         url: 'https://api.spotify.com/v1/me',
+        // qs for query string means no need for concatenation and makes it easier to read
         qs: {
           access_token: response.access_token
         },

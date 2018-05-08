@@ -10,14 +10,21 @@ $family-primary: 'Montserrat';
 
 @import '~bulma';
 
-body {
+html {
   background: linear-gradient(#373737, black);
   height: 100%;
+}
+
+body{
   color: white;
 }
 
+.is-horizontal-center {
+  justify-content: center;
+}
+
 .navbar {
-  background-color: #181818;
+  background-color: #161616;
   border-bottom: grey 2px solid;
 }
 
@@ -60,12 +67,10 @@ a.navbar-item:hover {
   border: white solid 2px;
 }
 
-
-@media screen and (max-width: $tablet - 1px){ //use of tablet from bulma
-
 .card-content{
     height:auto;
 }
+
 .card{
   padding: 20px;
   border-radius: 5px;
@@ -82,17 +87,63 @@ a.navbar-item:hover {
   height: 150px;
 }
 
-h1{
-  text-align: center;
-  font-size: 25px;
+input {
+  background: none;
 }
-navbar-brand{
-  background-color: grey;
+@media screen and (max-width: 1087px) { //use of tablet from bulma
+
+  .navbar-menu {
+    background-color: #161616;
+  }
+
+  .navbar-item {
+    border-top: 1px solid #373737;
+  }
+  .card-content{
+      height:auto;
+  }
+
+  .card{
+    padding: 20px;
+    border-radius: 5px;
+    color: white;
+  }
+
+  .card-image {
+    height: 300px;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+  }
+  .card-content {
+    height: 150px;
+  }
+
+  h1{
+    text-align: center;
+    font-size: 25px;
+  }
+  navbar-brand{
+    background-color: grey;
+  }
+  .column {
+    padding: 20px;
+  }
+  .image.is-4by3 img {
+    border-radius: 20px;
+  }
 }
-.column {
-  padding: 20px;
-}
-.image.is-4by3 img {
-  border-radius: 20px;
+
+@media screen and (max-width: $tablet){ //use of tablet from bulma
+
+  .main-buttons > button {
+    color: black;
+    width: 200px;
+    height: 50px;
+    border-radius: 100px;
+    margin-right: 20px;
+    margin-top: 20px;
+  }
+
 }
 }

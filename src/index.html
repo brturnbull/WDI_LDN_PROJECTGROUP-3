@@ -2,6 +2,7 @@
 <html ng-app="moodify">
 <head>
   <meta charset="utf-8">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.12/css/all.css" integrity="sha384-G0fIWCsCzJIMAVNQPfjH08cyYaUtMwjJwqiRKxxE/rx96Uroj1BtIQ6MLJuheaO9" crossorigin="anonymous">
   <title>Moodify</title>
 </head>
 <!-- /-/-/-  /-/-/-  /-/-/-  NAVBAR  /-/-/-  /-/-/-  /-/-/-  /-/-/-  /-/-/- -->
@@ -9,7 +10,7 @@
   <nav class="navbar" role="navigation" aria-label="main navigation" ng-if='main.isAuthenticated()'>
     <div class="navbar-brand">
       <a class="navbar-item" ui-sref="home">
-        <img src="https://upload.wikimedia.org/wikipedia/commons/c/c1/LP_Vinyl_Symbol_Icon.png" alt="" width="28" height="28">
+        <img src="./img/logo.svg" alt="" width="28" height="28">
       </a>
       <a role="button" class="navbar-burger" ng-click="main.toggleNav()" ng-class="{ 'is-active': main.navBarIsOpen }">
         <span aria-hidden="true"></span>
