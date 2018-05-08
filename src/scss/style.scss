@@ -9,7 +9,7 @@ $title-size: $size-6;
 $family-primary: 'Montserrat';
 
 @import '~bulma';
-<<<<<<< HEAD
+
 body {
   background: linear-gradient(#373737, black);
   height: 100%;
@@ -66,9 +66,9 @@ a.navbar-item:hover {
 .card-content{
     height:auto;
 }
-=======
+
 @media screen and (max-width: $tablet - 1px){ //use of tablet from bulma
->>>>>>> development
+
 
 }
 .card{
@@ -99,4 +99,6 @@ navbar-brand{
 }
 .image.is-4by3 img {
   border-radius: 20px;
+}
+
 }
