@@ -6,8 +6,9 @@ const clientId = process.env.SPOTIFY_CLIENT_ID;
 const clientSecret = process.env.SPOTIFY_CLIENT_SECRET;
 //------------------------------------------------------------------------------
 function spotify(req,res,next) {
-  console.log(req.body);
+
   rp({
+    //
     method: 'POST',
     url: 'https://accounts.spotify.com/api/token',
     form: {
@@ -25,6 +26,7 @@ function spotify(req,res,next) {
       return rp({
         method: 'GET',
         url: 'https://api.spotify.com/v1/me',
+        // qs for query string means no need for concatenation and makes it easier to read
         qs: {
           access_token: response.access_token
         },
@@ -32,13 +34,14 @@ function spotify(req,res,next) {
       });
     })
     .then(response => {
+      console.log(response);
       //find usewr by either email or spotify id
       return User.findOne({ $or: [{email: response.email}, {spotifyId: response.id}] })
         .then(user => {
           if(!user) {
             // if they are not a user then create a new account with their username and email
             user = new User({
-              username: response.display_name,
+              username: response.display_name || response.id,
               email: response.email
             });
           }
