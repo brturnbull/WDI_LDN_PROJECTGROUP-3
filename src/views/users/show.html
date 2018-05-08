@@ -11,7 +11,7 @@
         <a ui-sref="usersEdit({ id: UsersShow.User._id })" class="button is-primary">Edit</a>
         </div>
       </div>
-      <button ng-click="UsersShow.buttonDelete()" ng-if="UsersShow.User.username === req.body" >Delete</button>
+      <button ng-click="UsersShow.buttonDelete()" ng-if="UsersShow.User.username" >Delete</button>
       <!-- -->
     </div>
   </div>
