@@ -1,10 +1,11 @@
-MoodsNewCtrl.$inject =['$sce'];
+MoodsNewCtrl.$inject =['$sce', '$scope', '$http'];
 //------------------------------------------------------------------------------
-function MoodsNewCtrl($sce) {
-  this.data = {};
+function MoodsNewCtrl($sce, $scope, $http) {
+  const vm = this;
+  vm.data = {};
 
   const playlistIds = {
-    happy: ['37i9dQZF1DWWMOmoXKqHTD', '37i9dQZF1DX1g0iEXLFycr','37i9dQZF1DWXRvPx3nttRN', '37i9dQZF1DX2sUQwD7tbmL'],
+    happiness: ['37i9dQZF1DWWMOmoXKqHTD', '37i9dQZF1DX1g0iEXLFycr','37i9dQZF1DWXRvPx3nttRN', '37i9dQZF1DX2sUQwD7tbmL'],
     sad: ['37i9dQZF1DX7qK8ma5wgG1','37i9dQZF1DX3rxVfibe1L0','37i9dQZF1DX3YSRoSdA634'],
     surprised: ['37i9dQZF1DWSqmBTGDYngZ','37i9dQZF1DWVlYsZJXqdym','37i9dQZF1DX72Gcc60oKzC','37i9dQZF1DX843Qf4lrFtZ','5A1jPIIGL6FSpirRQlelSR'],
     neutral: ['37i9dQZF1DX1s9knjP51Oa','37i9dQZF1DX7K31D69s4M1','37i9dQZF1DX6FpuSJJgdDF','37i9dQZF1DWYckg2NJborB','37i9dQZF1DX7KrTMVQnM02'],
@@ -14,17 +15,25 @@ function MoodsNewCtrl($sce) {
 
   function handleCreate() {
     // the mood chosen in the drop down
-    const mood = this.data.mood;
+    const mood = vm.data.mood;
 
     // calling the array of possible playlists ie. happy, sad etc
     const possiblePlaylistIds = playlistIds[mood];
 
     // selecting a playlist id at random from the array
     const playlistId = possiblePlaylistIds[Math.floor(Math.random() * possiblePlaylistIds.length)];
-    this.playlistSrc = $sce.trustAsResourceUrl(`https://open.spotify.com/embed?uri=spotify:user:spotify:playlist:${playlistId}`);
+    vm.playlistSrc = $sce.trustAsResourceUrl(`https://open.spotify.com/embed?uri=spotify:user:spotify:playlist:${playlistId}`);
   }
 
-  this.handleCreate = handleCreate;
+  function getMood() {
+    if(!vm.data.imageUrl) return false;
+    $http.post('/api/faceplus', vm.data)
+      .then(res => vm.data.mood = res.data);
+  }
+
+  $scope.$watch(() => vm.data.imageUrl, getMood);
+
+  vm.handleCreate = handleCreate;
 
 }
 //------------------------------------------------------------------------------

@@ -1,13 +1,18 @@
 const rp = require('request-promise');
 const apiKey = process.env.FACEPLUS_API_KEY;
 const apiSecret = process.env.FACEPLUS_API_SECRET;
-const imageUrl = 'https://cdn.filepicker.io/api/file/scYIC43TX2Jy9SyRYcKJ';
 
 function faceRecognition(req, res, next) {
 
   rp({
     method: 'POST',
-    url: `https://api-us.faceplusplus.com/facepp/v3/detect?api_key=${apiKey}&api_secret=${apiSecret}&image_url=${imageUrl}&return_attributes=emotion`,
+    url: 'https://api-us.faceplusplus.com/facepp/v3/detect',
+    qs: {
+      api_key: apiKey,
+      api_secret: apiSecret,
+      image_url: req.body.imageUrl,
+      return_attributes: 'emotion'
+    },
     json: true
   })
     .then(response => {
