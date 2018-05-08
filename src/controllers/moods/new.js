@@ -1,6 +1,6 @@
-MoodsNewCtrl.$inject =['$http'];
+MoodsNewCtrl.$inject =['$sce'];
 
-function MoodsNewCtrl($http) {
+function MoodsNewCtrl($sce) {
   this.data = {};
 
   const playlistIds = {
@@ -20,15 +20,8 @@ function MoodsNewCtrl($http) {
     const possiblePlaylistIds = playlistIds[mood];
 
     // selecting a playlist id at random from the array
-    const randomPlaylistId = possiblePlaylistIds[Math.floor(Math.random() * possiblePlaylistIds.length)];
-
-    console.log(randomPlaylistId);
-
-    // make an ajax request to /api/playlists/${randomPlaylistId} before rendering the data
-
-    $http.get(`/api/playlists/${randomPlaylistId}`)
-      .then(res => this.playlist = res.data)
-      .then(console.log(this.playlist.name));
+    const playlistId = possiblePlaylistIds[Math.floor(Math.random() * possiblePlaylistIds.length)];
+    this.playlistSrc = $sce.trustAsResourceUrl(`https://open.spotify.com/embed?uri=spotify:user:spotify:playlist:${playlistId}`);
   }
 
   this.handleCreate = handleCreate;

@@ -1,4 +1,7 @@
 <h2>how do you feel?</h2>
+
+{{ moodsNew.data.imageUrl }}
+<input type="file" ng-model="moodsNew.data.imageUrl" upload-image />
 <hr>
 <form name="moodNew.form" ng-submit="moodsNew.handleCreate()" novalidate>
   <div class="field">
@@ -14,8 +17,11 @@
           <option value="disgust">Disgust</option>
         </select>
         <br />
-        <button>Generate Playlist</button>
+        <button class="button is-info">Generate Playlist</button>
       </div>
     </div>
   </div>
 </form>
+
+
+<iframe ng-if="moodsNew.playlistSrc" ng-src="{{ moodsNew.playlistSrc }}" width="300" height="380" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>
