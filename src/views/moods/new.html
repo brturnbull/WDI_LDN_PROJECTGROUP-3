@@ -1,26 +1,9 @@
 <h2>how do you feel?</h2>
 
-{{ moodsNew.data.imageUrl }}
-<input type="file" ng-model="moodsNew.data.imageUrl" upload-image />
 <hr>
 <form name="moodNew.form" ng-submit="moodsNew.handleCreate()" novalidate>
-  <div class="field">
-    <div class="control">
-      <div class="select is-black">
-        <select ng-model="moodsNew.data.mood">
-          <option>How do you feel?</option>
-          <option value="happy">Happy</option>
-          <option value="surprised">Surprised</option>
-          <option value="sad">Sad</option>
-          <option value="neutral">Neutral</option>
-          <option value="scared">Scared</option>
-          <option value="disgust">Disgust</option>
-        </select>
-        <br />
-        <button class="button is-info">Generate Playlist</button>
-      </div>
-    </div>
-  </div>
+  <input type="file" ng-model="moodsNew.data.imageUrl" upload-image />
+  <button class="button is-info" ng-if="moodsNew.data.mood">Generate Playlist</button>
 </form>
 
 
