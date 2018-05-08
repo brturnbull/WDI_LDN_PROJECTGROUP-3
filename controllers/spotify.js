@@ -1,7 +1,7 @@
 const rp = require('request-promise');
 const clientId = process.env.SPOTIFY_CLIENT_ID;
 const clientSecret = process.env.SPOTIFY_CLIENT_SECRET;
-
+//------------------------------------------------------------------------------
 function playlist(req, res, next) {
 
   rp({
@@ -31,7 +31,7 @@ function playlist(req, res, next) {
     })
     .catch(next);
 }
-
+//------------------------------------------------------------------------------
 module.exports = {
   playlist
 };

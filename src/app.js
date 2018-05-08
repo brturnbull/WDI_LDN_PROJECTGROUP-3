@@ -1,17 +1,15 @@
 import angular from 'angular';
 import 'filepicker-js';
 import 'angular-filepicker/dist/angular_filepicker';
-//import 'angular-messages';
 //-----------------------3rd party dependencies---------------------------------
 import '@uirouter/angularjs';
 import 'satellizer';
 //-------------------------Style------------------------------------------------
 import './scss/style.scss';
-//-------------------------Modules----------------------------------------------
+//-------------------------Config----------------------------------------------
 import Router from './config/router';
 import Auth from './config/auth';
 import Upload from './config/upload';
-// AUTH HERE
 //----------------------Controllers---------------------------------------------
 import RegisterCtrl from './controllers/auth/register';
 import UsersIndexCtrl from './controllers/users/index';
@@ -21,7 +19,7 @@ import LoginCtrl from './controllers/auth/login';
 import MoodsNewCtrl from './controllers/moods/new';
 import MainCtrl from './controllers/main';
 import SpotifyCtrl from './controllers/moods/show';
-//-----------------------Models--------------------------------------------------
+//-----------------------Models-------------------------------------------------
 import User from './models/user';
 //-----------------------Directives---------------------------------------------
 import uploadImage from './directives/uploadImage';

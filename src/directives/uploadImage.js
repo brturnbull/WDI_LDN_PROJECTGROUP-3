@@ -1,4 +1,5 @@
 uploadImage.$inject = ['filepickerService'];
+//------------------------------------------------------------------------------
 function uploadImage(filepickerService) {
   return {
     restrict: 'A',
@@ -6,7 +7,7 @@ function uploadImage(filepickerService) {
     link: (scope, element, attrs, model) => {
       element.bind('click', (e) => {
         e.preventDefault();
-
+        //----------------------------------------------------------------------
         filepickerService
           .pick({
             accept: 'image/*',
@@ -21,5 +22,5 @@ function uploadImage(filepickerService) {
     }
   };
 }
-
+//------------------------------------------------------------------------------
 export default uploadImage;
