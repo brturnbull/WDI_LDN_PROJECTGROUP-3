@@ -3,6 +3,7 @@ const users = require('../controllers/users');
 const spotify = require('../controllers/spotify');
 const auth = require('../controllers/auth');
 const oauth = require('../controllers/oauth');
+const faceplus = require('../controllers/faceplus');
 const secureRoute = require('../lib/secureRoute');
 //------------------------------------------------------------------------------
 router.route('/users')
@@ -22,6 +23,8 @@ router.post('/login', auth.login);
 
 router.post('/spotify', oauth.spotify);
 router.get('/playlists/:playlistId', spotify.playlist);
+
+router.post('/faceplus', faceplus.faceRecognition);
 
 //------------------------------------------------------------------------------
 
