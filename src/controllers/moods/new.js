@@ -1,5 +1,5 @@
 MoodsNewCtrl.$inject =['$sce'];
-
+//------------------------------------------------------------------------------
 function MoodsNewCtrl($sce) {
   this.data = {};
 
@@ -27,5 +27,5 @@ function MoodsNewCtrl($sce) {
   this.handleCreate = handleCreate;
 
 }
-
+//------------------------------------------------------------------------------
 export default MoodsNewCtrl;
