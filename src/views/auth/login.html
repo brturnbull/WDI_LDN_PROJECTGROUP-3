@@ -1,15 +1,16 @@
-<h1>LOGIN</h1>
-<form ng-submit="login.handleLogin()">
-  <div class="field">
-    <label for="email">Email</label>
-    <input class="input" placeholder="Email" name="email" ng-model="login.data.email"/>
-  </div>
-  <div class="field">
-    <label for="password">Password</label>
-    <input type="password" class="input" placeholder="Password" name="password" ng-model="login.data.password"/>
-  </div>
+<h1 class="is-size-1 has-text-centered has-text-weight-bold">Login</h1>
 
-  <button class="button is-primary">Submit</button>
-</form>
-
-<button ng-click="login.authenticate('spotify')">Sign in with spotify</button>
+    <form ng-submit="login.handleLogin()">
+      <div class="field">
+        <label for="email">Email</label>
+        <input class="input" placeholder="Email" name="email" ng-model="login.data.email"/>
+      </div>
+      <div class="field">
+        <label for="password">Password</label>
+        <input type="password" class="input" placeholder="Password" name="password" ng-model="login.data.password"/>
+      </div>
+      <div class="main-buttons has-text-centered">
+        <button class="button is-info is-size-5 has-text-weight-bold is-rounded">Submit</button>
+        <button class="button is-success is-size-5 has-text-weight-bold is-rounded" ng-click="login.authenticate('spotify')"><span><img src="./img/spotify.svg" width="25px" height="25px"/></span> Login</button>
+      </div>
+    </form>

@@ -1,12 +1,17 @@
 <section class="hero is-fullheight">
   <div class="hero-body">
     <div class="container">
-      <h1 class="is-size-1 has-text-weight-bold">Moodify</h1>
+      <div class="columns is-centered is-mobile is-tablet">
+      <img class="image is-128x128" src="./img/logo.svg" alt="">
+      </div>
+      <h1 class="is-size-1 has-text-centered has-text-weight-bold">Moodify</h1>
       <hr>
       <h2 class="is-size-4 has-text-weight-bold has-text-centered">Generate Spotify Playlists based on your mood</h2>
       <div class="main-buttons has-text-centered">
-        <button class="button is-info is-size-5 has-text-weight-bold" ui-sref="login">Login</button>
-        <button class="button inverse is-size-5 has-text-weight-bold" ui-sref="register">Register</button>
+        <button class="button is-info is-size-5 has-text-weight-bold" ng-if="!main.isAuthenticated()" ui-sref="login">Login</button>
+        <button class="button is-info is-size-5 has-text-weight-bold is-inverted is-outlined" ng-if="!main.isAuthenticated()"ui-sref="register">Register</button>
+        <button class="button is-info is-size-5 has-text-weight-bold" ng-if="main.isAuthenticated()" ng-click="main.logout()">Logout</button>
+        <button class="button is-info is-size-5 has-text-weight-bold is-inverted is-outlined" ng-if="main.isAuthenticated()" ui-sref="moodsNew">Find a playlist</button>
       </div>
     </div>
   </div>
