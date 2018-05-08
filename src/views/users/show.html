@@ -8,10 +8,10 @@
         <div class="text-wrapper">
         <p class="title is-5" >{{UsersShow.User.username}}
         <p class="subtitle is-6">{{UsersShow.User.bio}}
-        <a ui-sref="usersEdit({ id: UsersShow.User._id })" class="button is-primary">Edit</a>
+        <a ui-sref="usersEdit({ id: UsersShow.User._id })" class="button is-primary" ng-show="UsersShow.isCurrentUser()">Edit</a>
         </div>
       </div>
-      <button ng-click="UsersShow.buttonDelete()" ng-if="UsersShow.User.username" >Delete</button>
+      <button ng-click="UsersShow.buttonDelete()" ng-show="UsersShow.isCurrentUser()">Delete</button>
       <!-- -->
     </div>
   </div>
