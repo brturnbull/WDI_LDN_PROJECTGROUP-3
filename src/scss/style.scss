@@ -8,6 +8,11 @@ $title-size: $size-6;
 
 @import '~bulma';
 @media screen and (max-width: $tablet - 1px){ //use of tablet from bulma
+.body{
+  background-color: black;
+  height: 100vh;
+}
+
   .card-content{
     height:auto;
   }
