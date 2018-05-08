@@ -54,14 +54,9 @@ function Router($stateProvider, $urlRouterProvider) {
     })
   //mood show with playlist
     .state('moodsShow',{
-      url: '/moods',
-      templateUrl: 'views/moods/show.html',
-      controller: 'SpotifyCtrl as spotify'
-    })
-    .state('playlistShow', {
-      url: 'playlists/:playlistId',
-      template: 'views/playlists/show.html',
-      controller: 'SpotifyCtrl as spotify'
+      url: '/moods/show',
+      templateUrl: 'views/moods/show.html'
+      // controller: 'insert'
     })
     .state('moodsNew',{
       url: '/moods/new',
