@@ -1,13 +1,74 @@
 @import '~bulma/sass/utilities/initial-variables';
+@import url('https://fonts.googleapis.com/css?family=Montserrat:400,600');
 
 $primary: red;
-$card-background-color: black;
+$card-background-color: $black;
 $title-color: white;
 $subtitle-color: white;
 $title-size: $size-6;
+$family-primary: 'Montserrat';
 
 @import '~bulma';
+<<<<<<< HEAD
+body {
+  background: linear-gradient(#373737, black);
+  height: 100%;
+  color: white;
+}
+
+.navbar {
+  background-color: #181818;
+  border-bottom: grey 2px solid;
+}
+
+a.navbar-item {
+  color: white;
+}
+
+a.navbar-item:hover {
+  color: #0097F2;
+  background-color: #181818;
+}
+
+.main-buttons {
+  margin-top: 20px;
+}
+
+.main-buttons > button {
+  color: black;
+  width: 200px;
+  height: 50px;
+  border-radius: 100px;
+  margin-right: 20px;
+}
+
+.main-buttons > .is-info:hover{
+  color: #0097F2;
+  background-color: white;
+  border: #0097F2 solid 2px;
+}
+
+.main-buttons > .inverse{
+  color: #0097F2;
+  background-color: white;
+  border: #0097F2 solid 2px;
+}
+
+.main-buttons > .inverse:hover{
+  color: white;
+  background-color: #0097F2;
+  border: white solid 2px;
+}
+
+
 @media screen and (max-width: $tablet - 1px){ //use of tablet from bulma
+
+.card-content{
+    height:auto;
+}
+=======
+@media screen and (max-width: $tablet - 1px){ //use of tablet from bulma
+>>>>>>> development
 
 }
 .card{
