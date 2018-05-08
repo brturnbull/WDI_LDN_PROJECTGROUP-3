@@ -1,4 +1,6 @@
 import angular from 'angular';
+import 'filepicker-js';
+import 'angular-filepicker/dist/angular_filepicker';
 //import 'angular-messages';
 //-----------------------3rd party dependencies---------------------------------
 import '@uirouter/angularjs';
@@ -8,6 +10,7 @@ import './scss/style.scss';
 //-------------------------Modules----------------------------------------------
 import Router from './config/router';
 import Auth from './config/auth';
+import Upload from './config/upload';
 // AUTH HERE
 //----------------------Controllers---------------------------------------------
 import RegisterCtrl from './controllers/auth/register';
@@ -20,10 +23,13 @@ import MainCtrl from './controllers/main';
 import SpotifyCtrl from './controllers/moods/show';
 //-----------------------Models--------------------------------------------------
 import User from './models/user';
+//-----------------------Directives---------------------------------------------
+import uploadImage from './directives/uploadImage';
 //-----------------------Module-------------------------------------------------
-angular.module('moodify', ['ui.router', 'satellizer'])
+angular.module('moodify', ['ui.router','angular-filepicker', 'satellizer'])
   .config(Router)
   .config(Auth)
+  .config(Upload)
   .controller('UsersIndexCtrl', UsersIndexCtrl)
   .controller('UsersShowCtrl', UsersShowCtrl)
   .controller('UsersEditCtrl', UsersEditCtrl)
@@ -32,4 +38,5 @@ angular.module('moodify', ['ui.router', 'satellizer'])
   .controller('MoodsNewCtrl', MoodsNewCtrl)
   .service('User', User)
   .controller('LoginCtrl', LoginCtrl)
-  .controller('RegisterCtrl', RegisterCtrl);
+  .controller('RegisterCtrl', RegisterCtrl)
+  .directive('uploadImage', uploadImage);
