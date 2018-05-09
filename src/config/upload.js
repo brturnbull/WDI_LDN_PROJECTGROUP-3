@@ -1,5 +1,5 @@
 Upload.$inject = ['filepickerProvider'];
-//-----------------Filestack key API------0-------------------------------------
+//-----------------Filestack key API--------------------------------------------
 function Upload(filepickerProvider) {
   filepickerProvider.setKey('AHHp4qxpuRd6sbQQM5zAVz');
 }
