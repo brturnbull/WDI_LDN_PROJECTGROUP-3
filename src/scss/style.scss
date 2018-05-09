@@ -45,7 +45,6 @@ a.navbar-item:hover {
   color: black;
   width: 200px;
   height: 50px;
-  border-radius: 100px;
   margin-right: 20px;
 }
 
@@ -87,9 +86,25 @@ a.navbar-item:hover {
   height: 150px;
 }
 
-input {
+.input {
   background: none;
+  color: white;
 }
+
+.input::placeholder {
+  color: white;
+}
+
+.strike {
+  height: 20px;
+  border-bottom: 2px solid #373737;
+  text-align: center;
+}
+
+.extra-top {
+  margin-top: 70px;
+}
+
 @media screen and (max-width: 1087px) { //use of tablet from bulma
 
   .navbar-menu {
@@ -145,5 +160,4 @@ input {
     margin-top: 20px;
   }
 
-}
 }
