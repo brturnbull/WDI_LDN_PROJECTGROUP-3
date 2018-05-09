@@ -15,7 +15,12 @@ function LoginCtrl($auth, $state,$rootScope) {
   function authenticate(provider) {
 
     $auth.authenticate(provider)
-      .then(() => $state.go('home'));
+      .then(() => {
+        $rootScope.$broadcast('flashMessage', {
+          content: 'You have logged in successfully'
+        });
+        $state.go('moodsNew');
+      });
   }
   function isDanger(field){
     return (this.form[field].$error.required && this.form[field].$touched || this.form.$submitted);
