@@ -6,12 +6,12 @@
       </div>
       <h1 class="is-size-1 has-text-centered has-text-weight-bold">Moodify</h1>
       <hr>
-      <h2 class="is-size-4 has-text-weight-bold has-text-centered">Generate Spotify Playlists based on your mood</h2>
+      <h2 class="is-size-4 has-text-weight-bold has-text-centered">Generate Spotify playlists based on your mood</h2>
       <div class="main-buttons has-text-centered">
-        <button class="button is-info is-size-5 has-text-weight-bold" ng-if="!main.isAuthenticated()" ui-sref="login">Login</button>
-        <button class="button is-info is-size-5 has-text-weight-bold is-inverted is-outlined" ng-if="!main.isAuthenticated()"ui-sref="register">Register</button>
-        <button class="button is-info is-size-5 has-text-weight-bold" ng-if="main.isAuthenticated()" ng-click="main.logout()">Logout</button>
-        <button class="button is-info is-size-5 has-text-weight-bold is-inverted is-outlined" ng-if="main.isAuthenticated()" ui-sref="moodsNew">Find a playlist</button>
+        <button class="button is-info is-size-5 has-text-weight-bold is-rounded" ng-if="!main.isAuthenticated()" ui-sref="login">Login</button>
+        <button class="button is-info is-size-5 has-text-weight-bold is-inverted is-outlined is-rounded" ng-if="!main.isAuthenticated()"ui-sref="register">Register</button>
+        <button class="button is-info is-size-5 has-text-weight-bold is-rounded" ng-if="main.isAuthenticated()" ng-click="main.logout()">Logout</button>
+        <button class="button is-info is-size-5 has-text-weight-bold is-inverted is-outlined is-rounded" ng-if="main.isAuthenticated()" ui-sref="moodsNew">Find a playlist</button>
       </div>
     </div>
   </div>
