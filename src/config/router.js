@@ -1,14 +1,14 @@
 secureState.$inject = ['$q', '$auth', '$state', '$rootScope'];
 //------------------------------------------------------------------------------
-function secureState($q, $state, $auth, $rootScope) {
+function secureState($q, $auth, $state, $rootScope) {
   return new $q(resolve  => {
-    if($auth.isAuthenticated)
-      return resolve();
+    if($auth.isAuthenticated()) return resolve();
+
     $rootScope.$broadcast('flashMessage', {
       type: 'danger',
       content: 'You must be logged in.'
     });
-    $state.go('');
+    $state.go('login');
   });
 }
 Router.$inject = ['$stateProvider', '$urlRouterProvider'];
@@ -50,8 +50,6 @@ function Router($stateProvider, $urlRouterProvider) {
       url: '/users/:id/edit',
       templateUrl: 'views/users/edit.html',
       controller: 'UsersEditCtrl as UsersEdit'
-      //state.go isnt a function solve on monday
-      // resolve: { secureState }
     })
   //mood show with playlist
     .state('moodsShow',{
@@ -61,7 +59,8 @@ function Router($stateProvider, $urlRouterProvider) {
     .state('moodsNew',{
       url: '/moods/new',
       templateUrl: 'views/moods/new.html',
-      controller: 'MoodsNewCtrl as moodsNew'
+      controller: 'MoodsNewCtrl as moodsNew',
+      resolve: { secureState }
     });
   $urlRouterProvider.otherwise('/');
 }
