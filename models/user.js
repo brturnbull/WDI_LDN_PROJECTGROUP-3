@@ -3,12 +3,12 @@ const bcrypt = require('bcrypt');
 mongoose.Promise = require('bluebird');
 //------------------------------------------------------------------------------
 const userSchema = new mongoose.Schema({
-  username: { type: String, required: true },
+  username: { type: String},
   email: {type: String, unique: true },
   password: { type: String },
   spotifyId: { type: String },
-  bio: { type: String },
-  profile: { type: String }
+  bio: { type: String},
+  profile: { type: String}
 });
 //------------------------------------------------------------------------------
 

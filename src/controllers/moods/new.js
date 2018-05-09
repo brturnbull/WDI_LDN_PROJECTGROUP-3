@@ -2,8 +2,10 @@ MoodsNewCtrl.$inject =['$sce', '$scope', '$http'];
 //------------------------------------------------------------------------------
 function MoodsNewCtrl($sce, $scope, $http) {
   const vm = this;
+
   //creating an empty object to later reference the data through
   vm.data = {};
+  vm.playlistName;
 
   const playlistIds = {
     happiness: ['37i9dQZF1DWWMOmoXKqHTD', '37i9dQZF1DX1g0iEXLFycr','37i9dQZF1DWXRvPx3nttRN', '37i9dQZF1DX2sUQwD7tbmL'],
@@ -27,11 +29,18 @@ function MoodsNewCtrl($sce, $scope, $http) {
 
     // creating a "trusted resource" and appending the randomly selected playlist id to the end of the URL
     vm.playlistSrc = $sce.trustAsResourceUrl(`https://open.spotify.com/embed?uri=spotify:user:spotify:playlist:${playlistId}`);
+
+
+
+    $http.get(`/api/playlists/${playlistId}`)
+      // .then(res => console.log(res.data.name));
+      .then(res => vm.playlistName = res.data.name);
   }
 
   function getMood() {
     // don't make the api request unless we have received the data to send
     if(!vm.data.imageUrl) return false;
+
     $http.post('/api/faceplus', vm.data)
       // taking the response we get from posting to faceplus and assigning that locally
       .then(res => vm.data.mood = res.data);

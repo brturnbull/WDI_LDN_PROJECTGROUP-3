@@ -10,34 +10,40 @@ mongoose.connect(dbURI, (err, db) => {
 
   User
     .create([{
-      username: 'Neo',
+      username: 'Natalie',
       email: 'a@a.com',
       password: 'gop',
       passwordConfirmation: 'gop',
-      bio: 'Putting matrix references in my code in my spare time',
-      profile: 'https://ia.media-imdb.com/images/M/MV5BNzQzOTk3OTAtNDQ0Zi00ZTVkLWI0MTEtMDllZjNkYzNjNTc4L2ltYWdlXkEyXkFqcGdeQXVyNjU0OTQ0OTY@._V1_UX182_CR0,0,182,268_AL_.jpg'
+      bio: 'Love music and being an actress',
+      profile: 'https://nylon-img.imgix.net/featured_images/attachments/000/012/666/original/natalie1.jpg?auto=format&ch=Width%2CDPR&q=75&w=640&ixlib=js-1.1.1&cs=strip&s=24dc6a4d213e385bfa125e30269e87c0'
     },{
       username: 'Morpheus',
       email: 'b@b.com',
       password: 'gop',
       passwordConfirmation: 'gop',
-      bio: 'wakkas',
-      profile: 'https://ia.media-imdb.com/images/M/MV5BNzQzOTk3OTAtNDQ0Zi00ZTVkLWI0MTEtMDllZjNkYzNjNTc4L2ltYWdlXkEyXkFqcGdeQXVyNjU0OTQ0OTY@._V1_UX182_CR0,0,182,268_AL_.jpg'
+      bio: 'Will you take the red or blue pill?',
+      profile: 'http://i0.kym-cdn.com/photos/images/original/000/354/434/711.jpg'
     },{
       username: 'Elliot',
       email: 'e@e.com',
       password: 'gop',
       passwordConfirmation: 'gop',
       bio: 'Pre lunch ?',
-      profile: 'https://ia.media-imdb.com/images/M/MV5BNzQzOTk3OTAtNDQ0Zi00ZTVkLWI0MTEtMDllZjNkYzNjNTc4L2ltYWdlXkEyXkFqcGdeQXVyNjU0OTQ0OTY@._V1_UX182_CR0,0,182,268_AL_.jpg'
+      profile: 'http://i.dailymail.co.uk/i/pix/2017/07/07/20/04799DCD000003E8-0-Rooney_could_be_heading_back_with_a_season_long_loan_understood_-m-37_1499457389035.jpg'
     },{
       username: 'Bridget',
       email: 'z@z.com',
       password: 'gop',
       passwordConfirmation: 'gop',
-      spotifyId: '911',
       bio: 'No wakkas !',
       profile: 'https://i0.wp.com/franimals.org/wp-content/uploads/2015/10/sloth-1.jpg'
+    },{
+      username: 'Fil',
+      email: 'w@w.com',
+      password: 'gop',
+      passwordConfirmation: 'gop',
+      bio: 'Testing column length aswell as bio',
+      profile: 'https://vignette.wikia.nocookie.net/lotr/images/8/8d/Gandalf-2.jpg/revision/latest?cb=20130209172436'
     }])
     .then(users => {
       console.log(users);
