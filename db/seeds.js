@@ -4,7 +4,7 @@ mongoose.Promise = require('bluebird');
 const { dbURI} = require('../config/environment');
 mongoose.connect(dbURI, (err, db) => {
   db.dropDatabase();
-
+  
   //------------Require the models------------------------------------------------
   const User = require('../models/user');
 

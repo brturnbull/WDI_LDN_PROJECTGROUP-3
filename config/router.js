@@ -16,12 +16,11 @@ router.route('/users/:id')
 
 router.route('/spotify')
   .post(oauth.spotify)
-  .get(spotify.playlist);
+  .get(secureRoute, spotify.playlist);
 
 router.post('/register', auth.register);
 router.post('/login', auth.login);
 
-router.post('/spotify', oauth.spotify);
 router.get('/playlists/:playlistId', spotify.playlist);
 
 router.post('/faceplus', faceplus.faceRecognition);

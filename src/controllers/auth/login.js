@@ -7,13 +7,13 @@ function LoginCtrl($auth, $state,$rootScope) {
     $auth.login(this.data)
       .then(() => {
         $rootScope.$broadcast('flashMessage', {
-          content: 'Logging successful'
+          content: 'You have logged in successfully'
         });
         $state.go('moodsNew');
       });
   }
   function authenticate(provider) {
-    
+
     $auth.authenticate(provider)
       .then(() => $state.go('home'));
   }
