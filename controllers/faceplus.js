@@ -1,7 +1,7 @@
 const rp = require('request-promise');
 const apiKey = process.env.FACEPLUS_API_KEY;
 const apiSecret = process.env.FACEPLUS_API_SECRET;
-
+//------------------------------------------------------------------------------
 function faceRecognition(req, res, next) {
 
   rp({
@@ -25,7 +25,7 @@ function faceRecognition(req, res, next) {
     })
     .catch(next);
 }
-
+//------------------------------------------------------------------------------
 module.exports = {
   faceRecognition
 };

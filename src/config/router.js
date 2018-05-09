@@ -51,11 +51,7 @@ function Router($stateProvider, $urlRouterProvider) {
       templateUrl: 'views/users/edit.html',
       controller: 'UsersEditCtrl as UsersEdit'
     })
-  //mood show with playlist
-    .state('moodsShow',{
-      url: '/moods/show',
-      templateUrl: 'views/moods/show.html'
-    })
+  //new moods with playlist
     .state('moodsNew',{
       url: '/moods/new',
       templateUrl: 'views/moods/new.html',
@@ -64,4 +60,5 @@ function Router($stateProvider, $urlRouterProvider) {
     });
   $urlRouterProvider.otherwise('/');
 }
+//------------------------------------------------------------------------------
 export default Router;

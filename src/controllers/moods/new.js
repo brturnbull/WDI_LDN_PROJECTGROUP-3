@@ -7,6 +7,7 @@ function MoodsNewCtrl($sce, $scope, $http) {
   vm.data = {};
   vm.playlistName;
 
+  //list of playlistIDs to be selected randomly on getting the face + emotion back
   const playlistIds = {
     happiness: ['37i9dQZF1DWWMOmoXKqHTD', '37i9dQZF1DX1g0iEXLFycr','37i9dQZF1DWXRvPx3nttRN', '37i9dQZF1DX2sUQwD7tbmL'],
     sadness: ['37i9dQZF1DX7qK8ma5wgG1','37i9dQZF1DX3rxVfibe1L0','37i9dQZF1DX3YSRoSdA634'],

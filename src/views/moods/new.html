@@ -4,6 +4,7 @@
     <h1 class="is-size-1 is-pulled-left has-text-weight-bold is-marginless">Moodify</h1>
   </div>
 </div>
+
 <div class="has-text-centered">
   <h2 class="is-size-3">Upload an image to find a playlist</h2>
   <form name="moodNew.form" ng-submit="moodsNew.handleCreate()" novalidate>
@@ -12,7 +13,9 @@
     <button class="button is-info" ng-if="moodsNew.data.mood">Generate Playlist</button>
   </form>
 </div>
+
 <hr>
+
 <div class="columns">
   <div class="column is-half has-text-centered">
     <p class="">{{ moodsNew.data.mood }}</p>
