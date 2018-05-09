@@ -11,6 +11,7 @@ mongoose.connect(dbURI);
 
 //App use for parser aswell as connecting api to router .Error Handler set in lib use.
 app.use(bodyParser.json());
+app.use(express.static(`${__dirname}/public`));
 app.use('/api', router);
 app.get('/*', (req, res) => res.sendFile(`${__dirname}/public/index.html`));
 app.use(errorHandler);
