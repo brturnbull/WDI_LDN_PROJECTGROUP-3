@@ -25,7 +25,7 @@ import User from './models/user';
 //-----------------------Directives---------------------------------------------
 import uploadImage from './directives/uploadImage';
 //-----------------------Module-------------------------------------------------
-angular.module('moodify', ['ui.router','angular-filepicker', 'satellizer'])
+angular.module('moodify', ['ui.router','angular-filepicker', 'satellizer', 'ngMessages'])
   .config(Router)
   .config(Auth)
   .config(Upload)
@@ -35,7 +35,7 @@ angular.module('moodify', ['ui.router','angular-filepicker', 'satellizer'])
   .controller('MainCtrl', MainCtrl)
   .controller('SpotifyCtrl', SpotifyCtrl)
   .controller('MoodsNewCtrl', MoodsNewCtrl)
-  .service('User', User)
   .controller('LoginCtrl', LoginCtrl)
   .controller('RegisterCtrl', RegisterCtrl)
-  .directive('uploadImage', uploadImage);
+  .directive('uploadImage', uploadImage)
+  .service('User', User);
