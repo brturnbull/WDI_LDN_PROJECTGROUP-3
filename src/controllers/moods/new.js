@@ -14,7 +14,7 @@ function MoodsNewCtrl($sce, $scope, $http) {
     neutral: ['37i9dQZF1DX1s9knjP51Oa','37i9dQZF1DX7K31D69s4M1','37i9dQZF1DX6FpuSJJgdDF','37i9dQZF1DWYckg2NJborB','37i9dQZF1DX7KrTMVQnM02'],
     fear: ['37i9dQZF1DWWqNJmH2i89D','37i9dQZF1DWUvQoIOFMFUT','37i9dQZF1DX3PIPIT6lEg5','37i9dQZF1DXa2PsvJSPnPf',''],
     disgust: ['37i9dQZF1DWUvQoIOFMFUT','37i9dQZF1DWVV27DiNWxkR','37i9dQZF1DX2pSTOxoPbx9','37i9dQZF1DXarebqD2nAVg','37i9dQZF1DWX83CujKHHOn'],
-    anger: ['37i9dQZF1DWTcqUzwhNmKv']
+    anger: ['37i9dQZF1DWTcqUzwhNmKv', '37i9dQZF1DX9qNs32fujYe']
   };
 
   function handleCreate() {
