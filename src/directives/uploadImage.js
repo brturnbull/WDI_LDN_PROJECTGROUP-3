@@ -5,6 +5,11 @@ function uploadImage(filepickerService) {
     restrict: 'A',
     require: 'ngModel',
     link: (scope, element, attrs, model) => {
+
+      element.on('click', () => {
+        console.log(angular.element(document).find('iframe'));
+      });
+
       element.bind('click', (e) => {
         e.preventDefault();
         //----------------------------------------------------------------------
@@ -13,7 +18,7 @@ function uploadImage(filepickerService) {
             accept: 'image/*',
             maxFiles: 1,
             uploadInBackground: false,
-            fromSources: ['local_file_system', 'webcam']
+            service: 'WEBCAM'
           }, (data) => {
             // return data.filesUploaded[0].url;
             model.$setViewValue(data.url);
