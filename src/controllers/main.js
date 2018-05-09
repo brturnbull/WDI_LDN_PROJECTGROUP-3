@@ -1,13 +1,14 @@
-MainCtrl.$inject = ['$transitions', '$auth', '$state'];
+MainCtrl.$inject = ['$transitions', '$auth','$rootScope', '$state','$timeout'];
 //-----------------------------------------------------------------------------
-function MainCtrl($transitions, $auth, $state) {
+function MainCtrl($transitions, $auth,$rootScope, $state,$timeout) {
   this.navBarIsOpen = false;
   this.isHome = true;
+  this.flashMessage = null;
 
   this.isAuthenticated = $auth.isAuthenticated;
 
   $transitions.onSuccess({}, (transition) => {
-    this.isHome = transition.to().name === 'home';
+    this.isHome = (transition.to().name === 'home');
     this.navBarIsOpen = false;
   });
   //-----------------------------------------------------------------------------
@@ -22,6 +23,11 @@ function MainCtrl($transitions, $auth, $state) {
   //-----------------------------------------------------------------------------
   this.toggleNav = toggleNav;
   this.logout = logout;
+
+  $rootScope.$on('flashMessage', (e, data) => {
+    this.flashMessage = data;
+    $timeout(() => this.flashMessage = null, 5000);
+  });
 //-----------------------------------------------------------------------------
 }
 //-----------------------------------------------------------------------------

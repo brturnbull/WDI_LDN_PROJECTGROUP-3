@@ -1,4 +1,5 @@
 secureState.$inject = ['$q', '$auth', '$state', '$rootScope'];
+//------------------------------------------------------------------------------
 function secureState($q, $state, $auth, $rootScope) {
   return new $q(resolve  => {
     if($auth.isAuthenticated)
@@ -56,7 +57,6 @@ function Router($stateProvider, $urlRouterProvider) {
     .state('moodsShow',{
       url: '/moods/show',
       templateUrl: 'views/moods/show.html'
-      // controller: 'insert'
     })
     .state('moodsNew',{
       url: '/moods/new',

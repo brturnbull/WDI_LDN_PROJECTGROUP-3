@@ -30,9 +30,13 @@
   </nav>
 <!-- /-/-/-  /-/-/-  /-/-/-  /-/-/-  /-/-/-  /-/-/-  /-/-/-  /-/-/-  /-/-/- -->
   <ui-view ng-if="main.isHome"></ui-view>
-  <section class='section' ng-if="!main.isHome">
-    <div class="container" ui-view></div>
-  </section>
+  <!-- <div ng-if="main.flashMessage.content">
+  {{ main.flashMessage.content }}
+  </div> -->
+    <div ng-if="main.flashMessage.content" class="notification is-{{main.flashMessage.type}}">
+      {{main.flashMessage.content}}
+    </div>
+  <section class='section' ng-if="!main.isHome"><div class="container" ui-view></div></section>
 </body>
 <!-- /-/-/-  /-/-/-  /-/-/-  /-/-/-  /-/-/-  /-/-/-  /-/-/-  /-/-/-  /-/-/- -->
 </html>

@@ -1,23 +1,23 @@
 <h1>USER INDEX</h1>
 <div class="columns is-multiline">
   <div ng-repeat="Users in UsersIndex.all" class="column is-half-tablet is-one-third-desktop">
-    <!-- dont know if user id is needed -->
     <a ui-sref="usersShow({ id: Users._id})">
-      <div class="card">
-        <div class="card-image" style="background-image: url({{ Users.profile}})">
-          <figure class="image">
-          </figure>
-        </div>
-        <div class="card-content">
-          <div class="media">
-            <div class="media-content">
-              <div class="text-wrapper">
-              <p class="title is-5" >{{Users.username}}</p>
-              </div>
-            </div>
+    <div class="card">
+      <div class="card-image">
+        <figure class="image ">
+          <img src="{{ Users.profile}}" alt="Placeholder image" style="width:350px;height:250px;">
+        </figure>
+      </div>
+      <div class="card-content">
+        <div class="media">
+          <div class="media-content">
+            <p class="title is-4">{{Users.username}}</p>
           </div>
         </div>
-      </a>
+        <div class="content">
+          {{ Users.bio}}"
+        </div>
+      </div>
     </div>
   </div>
 </div>
