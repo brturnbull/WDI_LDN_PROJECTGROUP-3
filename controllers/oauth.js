@@ -35,7 +35,7 @@ function spotify(req,res,next) {
     })
     .then(response => {
       console.log(response);
-      //find usewr by either email or spotify id
+      //find user by either email or spotify id
       return User.findOne({ $or: [{email: response.email}, {spotifyId: response.id}] })
         .then(user => {
           if(!user) {

@@ -1,13 +1,14 @@
-MainCtrl.$inject = ['$transitions', '$auth', '$state'];
+MainCtrl.$inject = ['$transitions', '$auth','$rootScope', '$state'];
 //-----------------------------------------------------------------------------
-function MainCtrl($transitions, $auth, $state) {
+function MainCtrl($transitions, $auth,$rootScope, $state) {
   this.navBarIsOpen = false;
   this.isHome = true;
+  this.flashMessage = null;
 
   this.isAuthenticated = $auth.isAuthenticated;
 
   $transitions.onSuccess({}, (transition) => {
-    this.isHome = transition.to().name === 'home';
+    this.isHome = (transition.to().name === 'home');
     this.navBarIsOpen = false;
   });
   //-----------------------------------------------------------------------------

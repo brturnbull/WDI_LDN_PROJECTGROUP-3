@@ -1,6 +1,7 @@
 import angular from 'angular';
 import 'filepicker-js';
 import 'angular-filepicker/dist/angular_filepicker';
+import 'angular-messages';
 //-----------------------3rd party dependencies---------------------------------
 import '@uirouter/angularjs';
 import 'satellizer';
