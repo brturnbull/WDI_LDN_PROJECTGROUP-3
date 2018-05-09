@@ -1,7 +1,8 @@
 <h2>how do you feel?</h2>
+
 <p>Mood: {{ moodsNew.data.mood }}</p>
 <img ng-src="{{ moodsNew.data.imageUrl }}" alt="">
-<p>Playlist: {{ moodsNew.playlistSrc.name }}</p>
+<p>Playlist: {{ moodsNew.playlistName }}</p>
 <hr>
 <form name="moodNew.form" ng-submit="moodsNew.handleCreate()" novalidate>
   <input type="file" ng-model="moodsNew.data.imageUrl" upload-image />

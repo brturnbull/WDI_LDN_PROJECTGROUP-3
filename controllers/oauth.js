@@ -22,7 +22,6 @@ function spotify(req,res,next) {
     json: true
   })
     .then(response => {
-      // console.log(response)
       return rp({
         method: 'GET',
         url: 'https://api.spotify.com/v1/me',
@@ -34,8 +33,7 @@ function spotify(req,res,next) {
       });
     })
     .then(response => {
-      console.log(response);
-      //find usewr by either email or spotify id
+      //find user by either email or spotify id
       return User.findOne({ $or: [{email: response.email}, {spotifyId: response.id}] })
         .then(user => {
           if(!user) {
