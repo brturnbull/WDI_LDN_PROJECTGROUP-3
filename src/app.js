@@ -1,6 +1,6 @@
 import angular from 'angular';
-import 'filepicker-js';
 import 'angular-filepicker/dist/angular_filepicker';
+import 'filepicker-js';
 import 'angular-messages';
 //-----------------------3rd party dependencies---------------------------------
 import '@uirouter/angularjs';
@@ -25,6 +25,7 @@ import User from './models/user';
 //-----------------------Directives---------------------------------------------
 import uploadImage from './directives/uploadImage';
 //-----------------------Module-------------------------------------------------
+
 angular.module('moodify', ['ui.router','angular-filepicker', 'satellizer', 'ngMessages'])
   .config(Router)
   .config(Auth)
