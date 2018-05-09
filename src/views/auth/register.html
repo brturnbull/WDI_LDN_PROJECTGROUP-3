@@ -1,32 +1,75 @@
-<h1>REGISTER</h1>
-<form name="register.form" ng-submit="register.handleRegister()" novalidate>
-  <div class="field">
-    <label for="username">Username</label>
-    <input class="input" placeholder="Username" name="username" ng-model="register.data.username" required/>
-    <div ng-messages="register.form.username.$error" ng-if="register.form.username.$dirty || register.form.$submitted">
-   <div ng-message="required">Please complete your username</div>
- </div>
+<div class="level">
+  <div class="level-item has-text-centered">
+    <img class="image is-64x64 is-pulled-right" src="./img/logo.svg" alt="">
+    <h1 class="is-size-1 is-pulled-left has-text-weight-bold is-marginless">Moodify</h1>
   </div>
-  <div class="field">
-    <label for="email">Email</label>
-    <input class="input" placeholder="Email" name="email" ng-model="register.data.email" required/>
-    <div ng-messages="register.form.email.$error" ng-if="register.form.email.$dirty || register.form.$submitted">
-   <div ng-message="required">Please complete your email</div>
- </div>
+</div>
+
+<div class="container extra-top"><!-- Start of container -->
+
+  <!-- Spotify login section -->
+  <div class="columns">
+    <div class="column is-8 is-offset-2 is-mobile is-tablet">
+      <div class="level">
+        <div class="level-item has-text-centered">
+          <button class="button is-success is-size-5 has-text-weight-bold is-rounded" ng-click="login.authenticate('spotify')">
+            <img src="./img/spotify.svg" width="25px" height="25px"/>
+          Register with Spotify</button>
+        </div>
+      </div>
+    </div>
   </div>
-  <div class="field">
-    <label for="password">Password</label>
-    <input class="input" type="password" placeholder="Password" name="password" ng-model="register.data.password" required/>
-    <div ng-messages="register.form.password.$error" ng-if="register.form.password.$dirty || register.form.$submitted">
-   <div ng-message="required">Please complete your password</div>
- </div>
+  <!-- End og Spotify login section -->
+
+  <!-- Hr OR section -->
+  <div class="columns is-mobile is-tablet">
+    <div class="column strike is-3 is-offset-2">
+    </div>
+    <div class="column is-2 has-text-centered">
+      <h3 class="is-size-5">OR</h3>
+    </div>
+    <div class="column strike is-3">
+    </div>
   </div>
-  <div class="field">
-    <label for="passwordConfirmation">Password Confirmation</label>
-    <input class="input" type="password" placeholder="Password Confirmation" name="passwordConfirmation" ng-model="register.data.passwordConfirmation" required/>
-    <div ng-messages="register.form.passworConfirmation.$error" ng-if="register.form.passwordConfirmation.$dirty || register.form.$submitted">
-   <div ng-message="required">Password do not match</div>
- </div>
+  <!-- End of Hr Or section -->
+
+
+  <!-- Start of form section -->
+  <div class="columns is-mobile is-tablet">
+    <div class="column is-8 is-offset-2">
+      <form name="register.form" ng-submit="register.handleRegister()" novalidate>
+        <div class="field">
+          <label for="username">Username</label>
+          <input class="input" placeholder="Username" name="username" ng-model="register.data.username" required/>
+          <div ng-messages="register.form.username.$error" ng-if="register.form.username.$dirty || register.form.$submitted">
+         <div ng-message="required">Please complete your username</div>
+       </div>
+        </div>
+        <div class="field">
+          <label for="email">Email</label>
+          <input class="input" placeholder="Email" name="email" ng-model="register.data.email" required/>
+          <div ng-messages="register.form.email.$error" ng-if="register.form.email.$dirty || register.form.$submitted">
+         <div ng-message="required">Please complete your email</div>
+       </div>
+        </div>
+        <div class="field">
+          <label for="password">Password</label>
+          <input class="input" type="password" placeholder="Password" name="password" ng-model="register.data.password" required/>
+          <div ng-messages="register.form.password.$error" ng-if="register.form.password.$dirty || register.form.$submitted">
+         <div ng-message="required">Please complete your password</div>
+       </div>required
+        </div>
+        <div class="field">
+          <label for="passwordConfirmation">Password Confirmation</label>
+          <input class="input" type="password" placeholder="Password Confirmation" name="passwordConfirmation" ng-model="register.data.passwordConfirmation" required/>
+          <div ng-messages="register.form.passworConfirmation.$error" ng-if="register.form.passwordConfirmation.$dirty || register.form.$submitted">
+         <div ng-message="required">Password do not match</div>
+        </div>
+        <div class="main-buttons has-text-centered">
+          <button class="button is-info is-size-5 has-text-weight-bold is-rounded">Register</button>
+        </div>
+      </form>
+    </div>
   </div>
-  <button class="button is-primary">Submit</button>
-</form>
+  <!-- End of form section -->
+</div> <!-- End of container -->
