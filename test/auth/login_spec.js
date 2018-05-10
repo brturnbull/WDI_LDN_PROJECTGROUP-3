@@ -5,7 +5,7 @@ const jwt = require('jsonwebtoken');
 //seed database with a single user for testing
 
 const User = require('../../models/user');
-  const userData = {
+const userData = {
   username: 'test',
   email: 'test@test.com',
   password: 'test',
@@ -13,7 +13,7 @@ const User = require('../../models/user');
 };
 
 let user;
-
+//------------------------------------------------------------------------------
 describe('POST /login', () => {
   // clearing data before every test
   beforeEach(done => {
@@ -31,7 +31,7 @@ describe('POST /login', () => {
       .send(userData)
       .expect(200, done);
   });
-
+  //----------------------------------------------------------------------------
   it('should return a token', done => {
     api
       .post('/api/login')
@@ -43,7 +43,7 @@ describe('POST /login', () => {
         done();
       });
   });
-
+  //------------------------------------------------------------------------------
   it('should return a 401 response if password is bad', done => {
     api
       .post('/api/login')
@@ -54,7 +54,7 @@ describe('POST /login', () => {
         done();
       });
   });
-
+  //------------------------------------------------------------------------------
   it('should return a 401 response if password is bad', done => {
     api
       .post('/api/login')
@@ -65,5 +65,5 @@ describe('POST /login', () => {
         done();
       });
   });
-
 });
+//------------------------------------------------------------------------------

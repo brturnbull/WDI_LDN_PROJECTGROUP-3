@@ -3,8 +3,7 @@
 const User = require('../../models/user');
 const jwt = require('jsonwebtoken');
 const { secret } = require('../../config/environment');
-
-
+//------------------------------------------------------------------------------
 const userData = {
   username: 'test',
   email: 'test@test.com',
@@ -15,7 +14,7 @@ const userData = {
 let token;
 let clientId;
 let clientSecret;
-
+//------------------------------------------------------------------------------
 describe('DELETE /user/:id', () => {
   beforeEach(done => {
     User.remove({})
@@ -25,7 +24,7 @@ describe('DELETE /user/:id', () => {
       })
       .then(() => done());
   });
-
+  //------------------------------------------------------------------------------
   it('should return a 204 response with a token', done => {
     api
       .delete('/api/users/:id')
@@ -38,7 +37,7 @@ describe('DELETE /user/:id', () => {
         done();
       });
   });
-
+//------------------------------------------------------------------------------
 
 
 

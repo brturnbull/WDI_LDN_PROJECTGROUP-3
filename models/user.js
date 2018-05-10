@@ -48,5 +48,5 @@ userSchema.pre('save', function hashPassword(next){
   }
   next();
 });
-
+//------------------------------------------------------------------------------
 module.exports = mongoose.model('User', userSchema);

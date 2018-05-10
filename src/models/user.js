@@ -13,6 +13,7 @@ function User($http){
   function updateById(id, data){
     return  $http.put(`/api/users/${id}`, data);
   }
+  //------------------------------------------------------------------------------
   this.find = find;
   this.findById = findById;
   this.removeById = removeById;
