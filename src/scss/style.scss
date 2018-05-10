@@ -12,7 +12,8 @@ $dimensions:16 24 32 48 64 96 128 420;
 //------------------------------------------------------------------------------
 
 section.ng-scope {
-    height: calc(200vh - 100px);
+    // height: calc(200vh - 100px); this fixes the issue in user index
+    height: calc(100vh);
     background: linear-gradient(#373737, black);
     color: white;
     background-repeat: no-repeat;
