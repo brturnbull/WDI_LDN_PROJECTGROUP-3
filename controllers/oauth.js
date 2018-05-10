@@ -49,7 +49,7 @@ function spotify(req,res,next) {
             user = new User({
               username: response.display_name || response.id,
               email: response.email,
-              profile: response.images[0] ? response.images[0].url : 'https://i.imgur.com/HAV4qUv.png'
+              profile: response.images[0] ? response.images[0].url : 'https://i.imgur.com/AIROeRn.png'
             });
           }
           //adding spotify id regardless -
