@@ -40,15 +40,15 @@
           <label for="email">Email</label>
           <input class="input" placeholder="Email" name="email" ng-model="login.data.email" pattern="^.*@.*\..*$" required/>
           <div ng-messages="login.form.email.$error" ng-if="login.form.email.$dirty || login.form.$submitted">
-          <div ng-message="required"><i class="fas fa-exclamation-circle"></i> This field is required.</div>
-          <div ng-message="pattern"><i class="fas fa-exclamation-circle"></i> This field must have the format of example@email.com</div>
+            <div ng-message="required"><i class="fas fa-exclamation-circle"></i> This field is required.</div>
+            <div ng-message="pattern"><i class="fas fa-exclamation-circle"></i> This field must have the format of example@email.com</div>
           </div>
         </div>
         <div class="field">
           <label for="password">Password</label>
           <input type="password" class="input" placeholder="Password" name="password" ng-model="login.data.password" required/>
           <div ng-messages="login.form.password.$error" ng-if="login.form.password.$dirty || login.form.$submitted">
-          <div ng-message="required"><i class="fas fa-exclamation-circle"></i> This field is required.</div>
+            <div ng-message="required"><i class="fas fa-exclamation-circle"></i> This field is required.</div>
           </div>
         </div>
         <div class="main-buttons has-text-centered">
