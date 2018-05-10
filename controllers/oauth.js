@@ -14,8 +14,8 @@ function spotify(req,res,next) {
     form: {
       grant_type: 'authorization_code',
       code: req.body.code,
-      redirect_uri: 'http://localhost:8000'
-    },
+      redirect_uri: 'req.body.redirectUri'
+    }, //req.body.redirectUri
     headers: {
       Authorization: 'Basic ' + Buffer.from(clientId + ':' + clientSecret).toString('base64')
     },
