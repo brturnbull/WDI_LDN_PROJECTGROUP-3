@@ -23,17 +23,17 @@ describe('edit /users/:id', () => {
       })
       .then(() => done());
   });
-
-  // it('should return a 201 response with a token', done => {
-  //   api
-  //     .put(`/api/users/${userId}`)
-  //     .set({
-  //       'Authorization': `Bearer ${token}`
-  //     })
-  //     .send(userData)
-  //     .end((err, res) => {
-  //       expect(res.status).to.eq(201);
-  //       done();
-  //     });
-  // });
+  
+  it('should return a 201 response with a token', done => {
+    api
+      .put(`/api/users/${userId}`)
+      .set({
+        'Authorization': `Bearer ${token}`
+      })
+      .send(userData)
+      .end((err, res) => {
+        expect(res.status).to.eq(201);
+        done();
+      });
+  });
 });

@@ -1,5 +1,5 @@
 import angular from 'angular';
-import 'filepicker-js';
+import './lib/filepicker';
 import 'angular-filepicker/dist/angular_filepicker';
 import 'angular-messages';
 //-----------------------3rd party dependencies---------------------------------
@@ -19,7 +19,6 @@ import UsersEditCtrl from './controllers/users/edit';
 import LoginCtrl from './controllers/auth/login';
 import MoodsNewCtrl from './controllers/moods/new';
 import MainCtrl from './controllers/main';
-// import SpotifyCtrl from './controllers/moods/show';
 //-----------------------Models-------------------------------------------------
 import User from './models/user';
 //-----------------------Directives---------------------------------------------
@@ -33,7 +32,6 @@ angular.module('moodify', ['ui.router','angular-filepicker', 'satellizer', 'ngMe
   .controller('UsersShowCtrl', UsersShowCtrl)
   .controller('UsersEditCtrl', UsersEditCtrl)
   .controller('MainCtrl', MainCtrl)
-  // .controller('SpotifyCtrl', SpotifyCtrl)
   .controller('MoodsNewCtrl', MoodsNewCtrl)
   .controller('LoginCtrl', LoginCtrl)
   .controller('RegisterCtrl', RegisterCtrl)

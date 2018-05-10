@@ -9,16 +9,16 @@
 
 <!-- Start of cards -->
 <div class="columns is-multiline">
-  <div ng-repeat="Users in UsersIndex.all"class="column is-one-quarter-desktop is-half-tablet">
+  <div ng-repeat="user in userIndex.all"class="column is-one-quarter-desktop is-half-tablet">
     <div class="card">
       <div class="card-image">
         <figure class="image is-4by3">
-          <img src="{{ Users.profile}}" alt="">
+          <img src="{{ user.profile}}" alt="">
         </figure>
       </div>
       <footer class="card-footer">
-          <a class="card-footer-item is-size-5 is-capitalized has-text-weight-semibold" ui-sref="usersShow({ id: Users._id})">
-            {{Users.username}}
+          <a class="card-footer-item is-size-5 is-capitalized has-text-weight-semibold" ui-sref="usersShow({ id: user._id})">
+            {{user.username}}
           </a>
       </footer>
     </div>
