@@ -4,8 +4,8 @@
     <a ui-sref="usersShow({ id: Users._id})">
     <div class="card">
       <div class="card-image">
-        <figure class="image ">
-          <img src="{{ Users.profile}}" alt="Placeholder image" style="width:350px;height:250px;">
+        <figure ng-if="Users.profile" class="image ">
+          <img ng-src="{{ Users.profile }}" alt="Placeholder image" style="width:350px;height:250px;">
         </figure>
       </div>
       <div class="card-content">

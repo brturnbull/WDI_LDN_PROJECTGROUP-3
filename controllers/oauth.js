@@ -33,6 +33,7 @@ function spotify(req,res,next) {
       });
     })
     .then(response => {
+      // console.log(response.images[0].url);
       //find user by either email or spotify id
       return User.findOne({ $or: [{email: response.email}, {spotifyId: response.id}] })
         .then(user => {
@@ -40,9 +41,12 @@ function spotify(req,res,next) {
             // if they are not a user then create a new account with their username and email
             user = new User({
               username: response.display_name || response.id,
-              email: response.email
+              email: response.email,
+              profile: response.images[0].url
             });
+            console.log(user);
           }
+          console.log(user);
           //adding spotify id regardless -
           // outside the function so the user
           user.spotifyId = response.id;
