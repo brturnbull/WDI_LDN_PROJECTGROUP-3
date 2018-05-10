@@ -26,19 +26,20 @@ describe('DELETE /user/:id', () => {
       .then(() => done());
   });
 
+
+// RECEIVING 500 ERROR
   // it('should return a 204 response with a token', done => {
   //   api
   //     .delete('/api/users/:id')
   //     .set({
-  //       'Authorization': `Bearer ${token}`,
-  //       'Authorization': 'Basic ' + Buffer.from(clientId + ':' + clientSecret).toString('base64')
+  //       'Authorization': `Bearer ${token}`
   //     })
   //     .end((err, res) => {
   //       expect(res.status).to.eq(204);
   //       done();
   //     });
   // });
-
+  //
 
 
 
