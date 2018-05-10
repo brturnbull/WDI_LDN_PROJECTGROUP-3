@@ -37,19 +37,19 @@ function Router($stateProvider, $urlRouterProvider) {
     .state('usersIndex',{
       url: '/users',
       templateUrl: 'views/users/index.html',
-      controller: 'UsersIndexCtrl as UsersIndex'
+      controller: 'UsersIndexCtrl as userIndex'
     })
   //showing the clicked user
     .state('usersShow',{
       url: '/users/:id',
       templateUrl: 'views/users/show.html',
-      controller: 'UsersShowCtrl as UsersShow'
+      controller: 'UsersShowCtrl as usersShow'
     })
   //editing user
     .state('usersEdit', {
       url: '/users/:id/edit',
       templateUrl: 'views/users/edit.html',
-      controller: 'UsersEditCtrl as UsersEdit'
+      controller: 'UsersEditCtrl as usersEdit'
     })
   //new moods with playlist
     .state('moodsNew',{

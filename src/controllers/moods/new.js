@@ -9,7 +9,7 @@ function MoodsNewCtrl($sce, $scope, $http) {
 
   //list of playlistIDs to be selected randomly on getting the face + emotion back
   const playlistIds = {
-    happiness: ['37i9dQZF1DWWMOmoXKqHTD', '37i9dQZF1DX1g0iEXLFycr','37i9dQZF1DWXRvPx3nttRN', '37i9dQZF1DX2sUQwD7tbmL'],
+    happiness: ['37i9dQZF1DX1OIMC8iDi74','37i9dQZF1DWWMOmoXKqHTD', '37i9dQZF1DX1g0iEXLFycr','37i9dQZF1DWXRvPx3nttRN', '37i9dQZF1DX2sUQwD7tbmL'],
     sadness: ['37i9dQZF1DX7qK8ma5wgG1','37i9dQZF1DX3rxVfibe1L0','37i9dQZF1DX3YSRoSdA634', '1a7ZGpS7Ugpees7e7eP6My', '6HqkpSVL58RuH1lczr8yVz'],
     surprised: ['37i9dQZF1DWSqmBTGDYngZ','37i9dQZF1DWVlYsZJXqdym','37i9dQZF1DX72Gcc60oKzC','37i9dQZF1DX843Qf4lrFtZ','5A1jPIIGL6FSpirRQlelSR'],
     neutral: ['37i9dQZF1DX1s9knjP51Oa','37i9dQZF1DX7K31D69s4M1','37i9dQZF1DX6FpuSJJgdDF','37i9dQZF1DWYckg2NJborB','37i9dQZF1DX7KrTMVQnM02'],
