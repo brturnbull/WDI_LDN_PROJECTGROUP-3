@@ -48,8 +48,8 @@ function spotify(req,res,next) {
             // if they are not a user then create a new account with their username and email
             user = new User({
               username: response.display_name || response.id,
-              email: response.email,
-              profile: response.images[0].url
+              email: response.email
+              // profile: response.images[0].url
             });
           }
           //adding spotify id regardless -
