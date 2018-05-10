@@ -4,7 +4,7 @@ mongoose.Promise = require('bluebird');
 const { dbURI} = require('../config/environment');
 mongoose.connect(dbURI, (err, db) => {
   db.dropDatabase();
-  
+
   //------------Require the models------------------------------------------------
   const User = require('../models/user');
 
@@ -46,8 +46,7 @@ mongoose.connect(dbURI, (err, db) => {
       profile: 'https://vignette.wikia.nocookie.net/lotr/images/8/8d/Gandalf-2.jpg/revision/latest?cb=20130209172436'
     }])
     .then(users => {
-      console.log(users);
-      console.log(`${users.length} neos have joined the matrix!`);
+      console.log(`${users.length} users have been created`);
     })
     .catch(err => console.log(err))
     .finally(() => mongoose.connection.close());

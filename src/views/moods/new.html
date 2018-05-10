@@ -4,22 +4,35 @@
     <h1 class="is-size-1 is-pulled-left has-text-weight-bold is-marginless">Moodify</h1>
   </div>
 </div>
+
 <div class="has-text-centered">
   <h2 class="is-size-3">Upload an image to find a playlist</h2>
   <form name="moodNew.form" ng-submit="moodsNew.handleCreate()" novalidate>
-    <button type="button" class="button is-info" onclick="document.getElementById('filestack').click();">Upload picture</button>
+    <button type="button" class="button is-info extra-space" onclick="document.getElementById('filestack').click();">Upload picture</button>
     <input type="file" id="filestack" ng-model="moodsNew.data.imageUrl" upload-image />
-    <button class="button is-info" ng-if="moodsNew.data.mood">Generate Playlist</button>
+    <button class="button is-info extra-space" ng-if="moodsNew.data.mood">Generate Playlist</button>
   </form>
 </div>
+
 <hr>
+
 <div class="columns">
-  <div class="column is-half has-text-centered">
-    <p class="">{{ moodsNew.data.mood }}</p>
-    <img class="image is-3by2" id="returned-image" ng-src="{{ moodsNew.data.imageUrl }}" alt="">
+  <div class="container">
+    <div class="column has-text-centered">
+      <p class="is-size-4" id="mood">{{ moodsNew.data.mood}}</p>
+      <img class="image is-3by2" id="returned-image" ng-src="{{ moodsNew.data.imageUrl }}" alt="">
+    </div>
   </div>
   <div class="column is-half has-text-centered">
-    <p>Playlist: {{ moodsNew.playlistName }}</p>
+    <p class="is-size-4">{{ moodsNew.playlistName }}</p>
     <iframe ng-if="moodsNew.playlistSrc" ng-src="{{ moodsNew.playlistSrc }}" width="100%" height="320" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>
   </div>
 </div>
+
+<script type="text/javascript">
+  let cap = document.getElementById('mood');
+
+  function capitalise(cap) {
+    console.log(string.charAt(0).toUpperCase() + string.slice(1));
+  }
+</script>

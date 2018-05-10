@@ -1,6 +1,6 @@
 @import '~bulma/sass/utilities/initial-variables';
 @import url('https://fonts.googleapis.com/css?family=Montserrat:400,600');
-
+//------------------------------------------------------------------------------
 $primary: red;
 $card-background-color: $black;
 $title-color: white;
@@ -9,15 +9,20 @@ $title-size: $size-6;
 $family-primary: 'Montserrat';
 $dimensions:16 24 32 48 64 96 128 420;
 @import '~bulma';
-
+//------------------------------------------------------------------------------
 html {
   background: linear-gradient(#373737, black);
   height:100%;
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
 body{
   color: white;
   height: 100%;
+  background-repeat: no-repeat;
+  background-size: cover;
+  min-height: 100vh;
 }
 
 .is-horizontal-center {
@@ -117,8 +122,16 @@ img {
   padding-top: 0px;
 }
 
-@media screen and (max-width: 1087px) { //use of tablet from bulma
+.extra-space {
+  margin: 7px 7px 7px 7px;
+}
 
+#mood:first-letter {
+  text-transform: capitalize;
+}
+
+@media screen and (max-width: 1087px) { //use of tablet from bulma
+//------------------------------------------------------------------------------
   .navbar-menu {
     background-color: #161616;
   }
@@ -160,9 +173,9 @@ img {
     border-radius: 20px;
   }
 }
-
+//------------------------------------------------------------------------------
 @media screen and (max-width: $tablet){ //use of tablet from bulma
-
+//------------------------------------------------------------------------------
   .main-buttons > button {
     color: black;
     width: 200px;
