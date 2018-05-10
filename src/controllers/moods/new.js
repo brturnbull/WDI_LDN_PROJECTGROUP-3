@@ -38,7 +38,6 @@ function MoodsNewCtrl($sce, $scope, $http) {
 
 
     $http.get(`/api/playlists/${playlistId}`)
-      // .then(res => console.log(res.data.name));
       .then(res => vm.playlistName = res.data.name);
   }
 

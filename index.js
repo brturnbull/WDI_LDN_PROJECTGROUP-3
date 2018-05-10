@@ -14,6 +14,6 @@ app.use(bodyParser.json());
 app.use('/api', router);
 app.use(errorHandler);
 //------------------------------------------------------------------------------
-app.listen(port, () => console.log(`We are within the matrix connected to ${port}`));
+app.listen(port, () => console.log(`Connected to port ${port}`));
 //------------------------------------------------------------------------------
 module.exports = app;
