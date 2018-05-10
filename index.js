@@ -16,6 +16,6 @@ app.use('/api', router);
 app.get('/*', (req, res) => res.sendFile(`${__dirname}/public/index.html`));
 app.use(errorHandler);
 //------------------------------------------------------------------------------
-app.listen(port, () => console.log(`We are within the matrix connected to ${port}`));
+app.listen(port, () => console.log(`Connected to port ${port}`));
 //------------------------------------------------------------------------------
 module.exports = app;
