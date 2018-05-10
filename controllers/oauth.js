@@ -40,9 +40,11 @@ function spotify(req,res,next) {
     })
     // once you have the accessToken, use it to get the user's profile from spotify
     .then(response => {
+      console.log('RESPONSE------->',response);
       // find user by either email or spotify id
       return User.findOne({ $or: [{email: response.email}, {spotifyId: response.id}] })
         .then(user => {
+          console.log('user before create----->',user);
           if(!user) {
             // if they are not a user then create a new account with their username and email
             user = new User({
@@ -50,6 +52,7 @@ function spotify(req,res,next) {
               email: response.email,
               profile: response.images[0].url
             });
+            console.log(user);
           }
           //adding spotify id regardless -
           user.spotifyId = response.id;

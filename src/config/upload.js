@@ -1,7 +1,7 @@
 Upload.$inject = ['filepickerProvider'];
 //-----------------Filestack key API--------------------------------------------
 function Upload(filepickerProvider) {
-  filepickerProvider.setKey('AHHp4qxpuRd6sbQQM5zAVz');
+  filepickerProvider.setKey('AtUhaDlr6RF6WqbsryNk1z');
 }
 //------------------------------------------------------------------------------
 export default Upload;
