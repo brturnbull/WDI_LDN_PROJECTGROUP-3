@@ -15,15 +15,10 @@ function spotify(req,res,next) {
       grant_type: 'authorization_code',
       // req body contains a code which needs to be used to
       code: req.body.code,
-<<<<<<< HEAD
-      redirect_uri: req.body.redirectUri
-    }, //req.body.redirectUri
-=======
       // redirect uri needs to be the homepage to which the page goes back when satellizer is complete
       // must not have a '/' at the end - causes issues
       redirect_uri: req.body.redirectUri
     },
->>>>>>> development
     headers: {
       // encoding the client id and secret again as requested by spotify docs
       Authorization: 'Basic ' + Buffer.from(clientId + ':' + clientSecret).toString('base64')
@@ -45,6 +40,7 @@ function spotify(req,res,next) {
     })
     // once you have the accessToken, use it to get the user's profile from spotify
     .then(response => {
+      console.log('response -------->', response);
       // find user by either email or spotify id
       return User.findOne({ $or: [{email: response.email}, {spotifyId: response.id}] })
         .then(user => {
