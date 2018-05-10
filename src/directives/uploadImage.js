@@ -19,7 +19,8 @@ function uploadImage(filepickerService) {
             accept: 'image/*',
             maxFiles: 1,
             uploadInBackground: false,
-            fromSources: ['local_file_system', 'webcam']
+            fromSources: ['local_file_system', 'webcam'],
+            service: 'WEBCAM'
           }, (data) => {
             model.$setViewValue(data.url);
           });

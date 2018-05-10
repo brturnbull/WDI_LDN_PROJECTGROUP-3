@@ -1,5 +1,5 @@
 import angular from 'angular';
-import 'filepicker-js';
+import './lib/filepicker';
 import 'angular-filepicker/dist/angular_filepicker';
 import 'angular-messages';
 //-----------------------3rd party dependencies---------------------------------
