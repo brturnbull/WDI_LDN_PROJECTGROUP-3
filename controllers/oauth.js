@@ -40,11 +40,6 @@ function spotify(req,res,next) {
     })
     // once you have the accessToken, use it to get the user's profile from spotify
     .then(response => {
-<<<<<<< HEAD
-      console.log('RESPONSE------->',response);
-=======
-      console.log('response -------->', response);
->>>>>>> aa6759e0d21be26e33cc030bc12621145476ee07
       // find user by either email or spotify id
       return User.findOne({ $or: [{email: response.email}, {spotifyId: response.id}] })
         .then(user => {
