@@ -1,26 +1,24 @@
-LoginCtrl.$inject = ['$auth', '$state','$rootScope'];
+LoginCtrl.$inject = ['$auth', '$state'];
 //-----------------------------------------------------------------------------
-function LoginCtrl($auth, $state,$rootScope) {
+function LoginCtrl($auth, $state,) {
 
   function handleLogin() {
     if(this.form.$invalid)return false;
-    $auth.login(this.data)
-      .then(() => {
-        $rootScope.$broadcast('flashMessage', {
-          content: 'You have logged in successfully'
-        });
-        $state.go('moodsNew');
-      });
+    $auth.login(this.data);
+    // .then(() => {
+    //   $rootScope.$broadcast('flashMessage', {
+    //     content: 'You have logged in successfully'
+    //   });
+    $state.go('moodsNew');
   }
   function authenticate(provider) {
 
-    $auth.authenticate(provider)
-      .then(() => {
-        $rootScope.$broadcast('flashMessage', {
-          content: 'You have logged in successfully'
-        });
-        $state.go('moodsNew');
-      });
+    $auth.authenticate(provider);
+    // .then(() => {
+    //   $rootScope.$broadcast('flashMessage', {
+    //     content: 'You have logged in successfully'
+    //   });
+    $state.go('moodsNew');
   }
   //checking if field has been touched / dirty / submitted
   function isDanger(field){
