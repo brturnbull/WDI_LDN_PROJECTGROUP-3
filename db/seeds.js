@@ -10,7 +10,7 @@ mongoose.connect(dbURI, (err, db) => {
 
   User
     .create([{
-      username: '',
+      username: 'Suzz',
       email: 'a@a.com',
       password: 'gop',
       passwordConfirmation: 'gop',
