@@ -3,8 +3,7 @@
 const User = require('../../models/user');
 const jwt = require('jsonwebtoken');
 const { secret } = require('../../config/environment');
-
-
+//------------------------------------------------------------------------------
 const userData = {
   username: 'test',
   email: 'test@test.com',
@@ -15,7 +14,7 @@ const userData = {
 let token;
 let clientId;
 let clientSecret;
-
+//------------------------------------------------------------------------------
 describe('DELETE /user/:id', () => {
   beforeEach(done => {
     User.remove({})
@@ -25,21 +24,20 @@ describe('DELETE /user/:id', () => {
       })
       .then(() => done());
   });
-
-
-// RECEIVING 500 ERROR
-  // it('should return a 204 response with a token', done => {
-  //   api
-  //     .delete('/api/users/:id')
-  //     .set({
-  //       'Authorization': `Bearer ${token}`
-  //     })
-  //     .end((err, res) => {
-  //       expect(res.status).to.eq(204);
-  //       done();
-  //     });
-  // });
-  //
+  //------------------------------------------------------------------------------
+  it('should return a 204 response with a token', done => {
+    api
+      .delete('/api/users/:id')
+      .set({
+        'Authorisation': `Bearer ${token}`,
+        'Authorization': 'Basic ' + Buffer.from(clientId + ':' + clientSecret).toString('base64')
+      })
+      .end((err, res) => {
+        expect(res.status).to.eq(204);
+        done();
+      });
+  });
+//------------------------------------------------------------------------------
 
 
 

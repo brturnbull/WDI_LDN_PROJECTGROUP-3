@@ -7,7 +7,7 @@ const userData = {
   password: 'test',
   passwordConfirmation: 'test'
 };
-
+//------------------------------------------------------------------------------
 describe('POST /register', () => {
   // clearing data before every test
   beforeEach(done => {
@@ -15,14 +15,14 @@ describe('POST /register', () => {
       .remove({})
       .then(() => done());
   });
-
+  //------------------------------------------------------------------------------
   it('should return a 200 response', done => {
     api
       .post('/api/register')
       .send(userData)
       .expect(200,done);
   });
-
+  //------------------------------------------------------------------------------
   it('should return a new user object', done => {
     api
       .post('/api/register')
@@ -32,7 +32,7 @@ describe('POST /register', () => {
         done();
       });
   });
-
+  //------------------------------------------------------------------------------
   it('Should create a new user', done => {
     api
       .post('/api/register')

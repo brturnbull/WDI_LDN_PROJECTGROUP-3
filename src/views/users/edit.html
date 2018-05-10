@@ -7,9 +7,12 @@
     <label for="bio">Bio</label>
     <input class="input" placeholder="Bio" name="bio" ng-model="UsersEdit.user.bio" />
   </div>
-  <div class="field">
+  <!-- <div class="field">
     <label for="profile">Profile</label>
     <input class="input" placeholder="Profile picture" name="picture" ng-model="UsersEdit.user.profile" />
-  </div>
+  </div> -->
+  <button type="button" class="button is-info" onclick="document.getElementById('filestack').click();">Upload picture</button>
+  <input type="file" id="filestack" ng-model="UsersEdit.user.profile" upload-image />
+
   <button class="button is-primary">Submit</button>
 </form>

@@ -30,9 +30,7 @@
   </nav>
 <!-- /-/-/-  /-/-/-  /-/-/-  /-/-/-  /-/-/-  /-/-/-  /-/-/-  /-/-/-  /-/-/- -->
   <ui-view ng-if="main.isHome"></ui-view>
-  <!-- <div ng-if="main.flashMessage.content">
-  {{ main.flashMessage.content }}
-  </div> -->
+  
     <div ng-if="main.flashMessage.content" class="notification is-{{main.flashMessage.type}}">
       {{main.flashMessage.content}}
     </div>
