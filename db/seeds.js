@@ -10,7 +10,7 @@ mongoose.connect(dbURI, (err, db) => {
 
   User
     .create([{
-      username: 'https://cdn.pixabay.com/photo/2015/03/03/08/55/portrait-photography-657116_960_720.jpg',
+      username: '',
       email: 'a@a.com',
       password: 'gop',
       passwordConfirmation: 'gop',
@@ -70,8 +70,8 @@ mongoose.connect(dbURI, (err, db) => {
       email: 'i@w.com',
       password: 'gop',
       passwordConfirmation: 'gop',
-      bio: 'https://scontent-lhr3-1.xx.fbcdn.net/v/t1.0-1/p200x200/24312964_10155179665476867_4274868500357912586_n.jpg?_nc_cat=0&oh=e0bd7df1fe54f08bbe8f443ae0c57503&oe=5B91C78C',
-      profile: ''
+      bio: '',
+      profile: 'https://scontent-lhr3-1.xx.fbcdn.net/v/t1.0-1/p200x200/24312964_10155179665476867_4274868500357912586_n.jpg?_nc_cat=0&oh=e0bd7df1fe54f08bbe8f443ae0c57503&oe=5B91C78C'
     },{
       username: 'Alex',
       email: 'u@w.com',

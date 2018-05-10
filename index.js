@@ -9,7 +9,7 @@ const router = require('./config/router');
 const {port, dbURI} = require('./config/environment');
 mongoose.connect(dbURI);
 
-//App use for parser aswell as connecting api to router .Error Handler set in lib use.
+// App use for parser aswell as connecting api to router. Error Handler set in lib use.
 app.use(bodyParser.json());
 app.use('/api', router);
 app.use(errorHandler);

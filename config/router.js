@@ -14,14 +14,14 @@ router.route('/users/:id')
   .delete(secureRoute,users.delete)
   .put(users.update);
 
-router.route('/spotify')
-  .post(oauth.spotify)
-  .get(secureRoute, spotify.playlist);
-
 router.post('/register', auth.register);
 router.post('/login', auth.login);
 
 router.get('/playlists/:playlistId', spotify.playlist);
+
+router.route('/spotify')
+  .post(oauth.spotify)
+  .get(secureRoute, spotify.playlist);
 
 router.post('/faceplus', faceplus.faceRecognition);
 
