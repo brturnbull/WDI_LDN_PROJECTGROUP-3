@@ -30,11 +30,14 @@
   </nav>
 <!-- /-/-/-  /-/-/-  /-/-/-  /-/-/-  /-/-/-  /-/-/-  /-/-/-  /-/-/-  /-/-/- -->
   <ui-view ng-if="main.isHome"></ui-view>
-  
-    <div ng-if="main.flashMessage.content" class="notification is-{{main.flashMessage.type}}">
+
+    <div ng-if="main.flashMessage.content" class="notification is-{{main.flashMessage.type}} has-background-danger">
       {{main.flashMessage.content}}
     </div>
   <section class='section' ng-if="!main.isHome"><div class="container" ui-view></div></section>
 </body>
+<footer class="footer has-background-grey">
+  <p>Hello</p>
+</footer>
 <!-- /-/-/-  /-/-/-  /-/-/-  /-/-/-  /-/-/-  /-/-/-  /-/-/-  /-/-/-  /-/-/- -->
 </html>
