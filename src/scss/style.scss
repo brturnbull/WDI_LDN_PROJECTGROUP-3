@@ -13,11 +13,16 @@ $dimensions:16 24 32 48 64 96 128 420;
 html {
   background: linear-gradient(#373737, black);
   height:100%;
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
 body{
   color: white;
   height: 100%;
+  background-repeat: no-repeat;
+  background-size: cover;
+  min-height: 100vh;
 }
 
 .is-horizontal-center {
@@ -115,6 +120,14 @@ img {
 
 #returned-image {
   padding-top: 0px;
+}
+
+.extra-space {
+  margin: 7px 7px 7px 7px;
+}
+
+#mood:first-letter {
+  text-transform: capitalize;
 }
 
 @media screen and (max-width: 1087px) { //use of tablet from bulma
