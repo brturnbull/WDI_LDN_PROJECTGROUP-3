@@ -7,7 +7,7 @@ function LoginCtrl($auth, $state,$rootScope) {
     $auth.login(this.data)
       .then(() => {
         $rootScope.$broadcast('flashMessage', {
-          content: 'You have logged in successfully'
+          // insert message desired here
         });
         $state.go('moodsNew');
       });
@@ -17,7 +17,7 @@ function LoginCtrl($auth, $state,$rootScope) {
     $auth.authenticate(provider)
       .then(() => {
         $rootScope.$broadcast('flashMessage', {
-          content: 'You have logged in successfully'
+          // insert message desired here
         });
         $state.go('moodsNew');
       });
