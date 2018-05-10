@@ -18,10 +18,6 @@ function MoodsNewCtrl($sce, $scope, $http) {
     anger: ['37i9dQZF1DWTcqUzwhNmKv', '37i9dQZF1DX9qNs32fujYe', '5s7Sp5OZsw981I2OkQmyrz', '37i9dQZF1DX0pH2SQMRXnC', '37i9dQZF1DWSqBruwoIXkA', '37i9dQZF1DWYMvTygsLWlG']
   };
 
-
-
-
-
   function handleCreate() {
     // the "emotion/mood" sent back via faceplus
     const mood = vm.data.mood;
@@ -36,7 +32,7 @@ function MoodsNewCtrl($sce, $scope, $http) {
     vm.playlistSrc = $sce.trustAsResourceUrl(`https://open.spotify.com/embed?uri=spotify:user:spotify:playlist:${playlistId}`);
 
 
-
+    // Making a request to the API to return the playlist name (for the "new" page)
     $http.get(`/api/playlists/${playlistId}`)
       .then(res => vm.playlistName = res.data.name);
   }
@@ -50,12 +46,11 @@ function MoodsNewCtrl($sce, $scope, $http) {
       .then(res => vm.data.mood = res.data);
   }
 
-  // watching for the change in the photo uploader, before calling the getMood function
+  // watching for the change in filestack upload, before calling the getMood function
   $scope.$watch(() => vm.data.imageUrl, getMood);
 
   // binds the context of handleCreate to the controller rather than the window
   vm.handleCreate = handleCreate;
-
 
 }
 //------------------------------------------------------------------------------
