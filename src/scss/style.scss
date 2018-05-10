@@ -12,7 +12,7 @@ $dimensions:16 24 32 48 64 96 128 420;
 //------------------------------------------------------------------------------
 
 section.ng-scope {
-    height: calc(100vh);
+    height: calc(200vh - 100px);
     background: linear-gradient(#373737, black);
     color: white;
     background-repeat: no-repeat;
@@ -104,7 +104,8 @@ img {
 .footer{
   height: 100px;
   background-color: #161616;
-  
+  box-shadow: 0 50vh 0 50vh #000;
+  // position: relative;
 }
 
 
