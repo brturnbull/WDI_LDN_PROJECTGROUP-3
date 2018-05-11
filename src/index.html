@@ -30,10 +30,9 @@
   </nav>
 <!-- /-/-/-  /-/-/-  /-/-/-  /-/-/-  /-/-/-  /-/-/-  /-/-/-  /-/-/-  /-/-/- -->
   <ui-view ng-if="main.isHome"></ui-view>
-
-    <div ng-if="main.flashMessage.content" class="notification is-{{main.flashMessage.type}} ">
-      {{main.flashMessage.content}}
-    </div>
+  <div ng-if="main.flashMessage.content" class="notification is-{{main.flashMessage.type}} ">
+    {{main.flashMessage.content}}
+  </div>
   <section class='section' ng-if="!main.isHome"><div class="container" ui-view></div></section>
 </body>
 <footer class="footer has-text-centered">
@@ -41,5 +40,4 @@
   <h6 class="is-size-6 has-text-info"><a href="https://github.com/ExRafiki/WDI_LDN_PROJECTGROUP-3"><i class="fab fa-github"></i> Project Github Repo</a></h6>
   <h7 class="is-size-7">WDI-33 Group Project</h7>
 </footer>
-<!-- /-/-/-  /-/-/-  /-/-/-  /-/-/-  /-/-/-  /-/-/-  /-/-/-  /-/-/-  /-/-/- -->
 </html>
