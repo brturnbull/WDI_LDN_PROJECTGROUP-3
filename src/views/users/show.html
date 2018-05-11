@@ -6,22 +6,19 @@
   </div>
 </div>
 <!-- End of logo -->
-
-
 <div class="card">
   <div class="card-image" style="background-image: url({{ usersShow.user.profile}})">
   </div>
-  <div class="card-content">
-    <div class="media">
-      <div class="media-content">
-        <div class="text-wrapper">
-        <p class="title is-5" >{{usersShow.user.username}}
-        <p class="subtitle is-6">{{usersShow.user.bio}}
+    <div class="card-content">
+      <div class="media">
+        <div class="media-content">
+          <div class="text-wrapper">
+            <p class="title is-5" >{{usersShow.user.username}}
+              <p class="subtitle is-6">{{usersShow.user.bio}}
+          </div>
         </div>
-      </div>
         <a ui-sref="usersEdit({ id: usersShow.user._id })" class="button is-info" ng-show="usersShow.isCurrentUser()">Edit</a>
-        <button class="button is-danger" ng-click="usersShow.buttonDelete()" ng-show="usersShow.isCurrentUser()">Delete</button>
-      <!-- -->
+          <button class="button is-danger" ng-click="usersShow.buttonDelete()" ng-show="usersShow.isCurrentUser()">Delete</button>
+      </div>
     </div>
-  </div>
 </div>
