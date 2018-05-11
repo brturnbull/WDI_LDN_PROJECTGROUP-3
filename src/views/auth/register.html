@@ -12,7 +12,7 @@
     <div class="column is-8 is-offset-2 is-mobile is-tablet">
       <div class="level">
         <div class="level-item has-text-centered">
-          <button class="button is-success is-size-5 has-text-weight-bold is-rounded" ng-click="login.authenticate('spotify')">
+          <button class="button is-success is-size-5 has-text-weight-bold is-rounded" ng-click="register.authenticate('spotify')">
           Register with Spotify <img src="https://i.imgur.com/HAV4qUv.png" width="25px" height="25px"/></button>
         </div>
       </div>
@@ -39,31 +39,33 @@
       <form name="register.form" ng-submit="register.handleRegister()" novalidate>
         <div class="field">
           <label for="username">Username</label>
-          <input class="input" placeholder="Username" name="username" ng-model="register.data.username" required/>
+          <input class="input" placeholder="Username" name="username" ng-model="register.data.username" minlength="4" required/>
           <div ng-messages="register.form.username.$error" ng-if="register.form.username.$dirty || register.form.$submitted">
-         <div ng-message="required">Please complete your username</div>
-       </div>
+            <div ng-message="required"><i class="fas fa-exclamation-circle"></i> This field is required</div>
+            <div ng-message="minlength"><i class="fas fa-exclamation-circle"></i> You must use at least 4 characters</div>
+          </div>
         </div>
         <div class="field">
           <label for="email">Email</label>
-          <input class="input" placeholder="Email" name="email" ng-model="register.data.email" required/>
+          <input class="input" placeholder="Email" name="email" ng-model="register.data.email" pattern="^.*@.*\..*$" required/>
           <div ng-messages="register.form.email.$error" ng-if="register.form.email.$dirty || register.form.$submitted">
-         <div ng-message="required">Please complete your email</div>
-       </div>
+            <div ng-message="required"><i class="fas fa-exclamation-circle"></i> This field is required.</div>
+            <div ng-message="pattern"><i class="fas fa-exclamation-circle"></i> This field must have the format of example@email.com</div>
+          </div>
         </div>
         <div class="field">
           <label for="password">Password</label>
           <input class="input" type="password" placeholder="Password" name="password" ng-model="register.data.password" required/>
           <div ng-messages="register.form.password.$error" ng-if="register.form.password.$dirty || register.form.$submitted">
-         <div ng-message="required">Please complete your password</div>
-       </div>
+            <div ng-message="required"><i class="fas fa-exclamation-circle"></i> This field is required.</div>
+          </div>
         </div>
         <div class="field">
           <label for="passwordConfirmation">Password Confirmation</label>
           <input class="input" type="password" placeholder="Password Confirmation" name="passwordConfirmation" ng-model="register.data.passwordConfirmation" required/>
           <div ng-messages="register.form.passworConfirmation.$error" ng-if="register.form.passwordConfirmation.$dirty || register.form.$submitted">
-         <div ng-message="required">Password do not match</div>
-        </div>
+            <div ng-message="required"><i class="fas fa-exclamation-circle"></i> This field is required.</div>
+          </div>
         <div class="main-buttons has-text-centered">
           <button class="button is-info is-size-5 has-text-weight-bold is-rounded">Register</button>
         </div>

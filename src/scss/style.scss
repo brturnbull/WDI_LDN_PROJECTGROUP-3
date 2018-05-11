@@ -12,11 +12,16 @@ $dimensions:16 24 32 48 64 96 128 420;
 //------------------------------------------------------------------------------
 
 section.ng-scope {
-    height: calc(100vh);
     background: linear-gradient(#373737, black);
     color: white;
     background-repeat: no-repeat;
     background-size: cover;
+    display: table;
+    height: 100%;
+    width: 100%;
+}
+.card {
+  border-radius: 10px;
 }
 
 .card-image {
@@ -24,6 +29,8 @@ section.ng-scope {
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
+  border-top-left-radius:  10px;
+  border-top-right-radius:  10px;
 }
 
 .is-horizontal-center {
@@ -110,11 +117,30 @@ img {
 
 .footer{
   height: 100px;
+  width: auto;
   background-color: #161616;
-
+  box-shadow: 100vh 110vh 0 110vh #161616;
+  // display: table-footer-group;
+  // position: relative;
+}
+.footer:before, .footer:after {
+    padding: 1em;
+    content: '';
 }
 
+.notification {
+  text-align: center;
+  background-color: red;
+  color: white;
+  font-size: 18px;
+  margin-bottom: 0 !important;
+  padding-bottom: 0 !important;
+  height: 60px;
+}
 
+.filler {
+  height:150px;
+}
 @media screen and (max-width: 1087px) { //use of tablet from bulma
 //------------------------------------------------------------------------------
 section.ng-scope {
