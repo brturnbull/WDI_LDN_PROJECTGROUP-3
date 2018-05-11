@@ -5,8 +5,6 @@
   </div>
 </div>
 
-
-
 <div class="container extra-top"><!-- Start of container -->
 
   <!-- Spotify login section -->
@@ -34,24 +32,24 @@
   </div>
   <!-- End of Hr Or section -->
 
-
   <!-- Start of form section -->
   <div class="columns is-mobile is-tablet">
     <div class="column is-8 is-offset-2">
       <form name="login.form" ng-submit="login.handleLogin()" novalidate>
         <div class="field">
           <label for="email">Email</label>
-          <input class="input" placeholder="Email" name="email" ng-model="login.data.email" required/>
+          <input class="input" placeholder="Email" name="email" ng-model="login.data.email" pattern="^.*@.*\..*$" required/>
           <div ng-messages="login.form.email.$error" ng-if="login.form.email.$dirty || login.form.$submitted">
-         <div ng-message="required">Please fill in your email</div>
-       </div>
+            <div ng-message="required"><i class="fas fa-exclamation-circle"></i> This field is required.</div>
+            <div ng-message="pattern"><i class="fas fa-exclamation-circle"></i> This field must have the format of example@email.com</div>
+          </div>
         </div>
         <div class="field">
           <label for="password">Password</label>
           <input type="password" class="input" placeholder="Password" name="password" ng-model="login.data.password" required/>
           <div ng-messages="login.form.password.$error" ng-if="login.form.password.$dirty || login.form.$submitted">
-         <div ng-message="required">Please fill in your password</div>
-       </div>
+            <div ng-message="required"><i class="fas fa-exclamation-circle"></i> This field is required.</div>
+          </div>
         </div>
         <div class="main-buttons has-text-centered">
           <button class="button is-info is-size-5 has-text-weight-bold is-rounded">Submit</button>
@@ -60,5 +58,4 @@
     </div>
   </div>
   <!-- End of form section -->
-
 </div> <!-- End of container -->

@@ -12,11 +12,13 @@ $dimensions:16 24 32 48 64 96 128 420;
 //------------------------------------------------------------------------------
 
 section.ng-scope {
-    height: calc(100vh);
     background: linear-gradient(#373737, black);
     color: white;
     background-repeat: no-repeat;
     background-size: cover;
+    display: table;
+    height: 100%;
+    width: 100%;
 }
 
 .card-image {
@@ -110,10 +112,16 @@ img {
 
 .footer{
   height: 100px;
+  width: auto;
   background-color: #161616;
-
+  box-shadow: 100vh 110vh 0 110vh #161616;
+  // display: table-footer-group;
+  // position: relative;
 }
-
+.footer:before, .footer:after {
+    padding: 1em;
+    content: '';
+}
 
 @media screen and (max-width: 1087px) { //use of tablet from bulma
 //------------------------------------------------------------------------------
