@@ -8,20 +8,20 @@
 <!-- End of logo -->
 
 <!-- Start of cards -->
-<div class="columns is-multiline">
-  <div ng-repeat="user in userIndex.all"class="column is-one-quarter-desktop is-half-tablet">
-    <div class="card">
-      <div class="card-image">
-        <figure class="image is-4by3">
-          <img src="{{ user.profile}}" alt="">
-        </figure>
-      </div>
-      <footer class="card-footer">
-          <a class="card-footer-item is-size-5 is-capitalized has-text-weight-semibold" ui-sref="usersShow({ id: user._id})">
+<a ui-sref="usersShow({ id: user._id})">
+  <div class="columns is-multiline">
+    <div ng-repeat="user in userIndex.all"class="column is-one-quarter-desktop is-half-tablet">
+      <div class="card">
+        <div class="card-image">
+          <div class="card-image" style="background-image: url({{ user.profile }})"></div>
+        </div>
+        <footer class="card-footer">
+          <a class="card-footer-item is-size-5 is-capitalized has-text-weight-semibold">
             {{user.username}}
           </a>
-      </footer>
+        </footer>
+      </div>
     </div>
   </div>
-</div>
+</a>
 <!-- End of cards -->

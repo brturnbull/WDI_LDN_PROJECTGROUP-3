@@ -5,7 +5,7 @@ const apiSecret = process.env.FACEPLUS_API_SECRET;
 function faceRecognition(req, res, next) {
 
   rp({
-    // post to the face plus detection API containing necessary arguments in the query string
+    // post to the face plus detection API with the necessary arguments in the query string (qs)
     method: 'POST',
     url: 'https://api-us.faceplusplus.com/facepp/v3/detect',
     qs: {
@@ -13,7 +13,7 @@ function faceRecognition(req, res, next) {
       api_secret: apiSecret,
       // req.body.imageUrl take the image from the filestack uploader
       image_url: req.body.imageUrl,
-      // specify the response you need (in this case, emotion)
+      // specify the attributes you want in the response (in this case, emotion)
       return_attributes: 'emotion'
     },
     // return in JSON

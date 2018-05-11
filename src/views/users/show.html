@@ -1,18 +1,24 @@
-<h1>USER SHOW</h1>
+<!-- Start of logo -->
+<div class="level">
+  <div class="level-item has-text-centered">
+    <img class="image is-64x64 is-pulled-right" src="./img/logo.svg" alt="">
+    <h1 class="is-size-1 is-pulled-left has-text-weight-bold is-marginless">Moodify</h1>
+  </div>
+</div>
+<!-- End of logo -->
 <div class="card">
   <div class="card-image" style="background-image: url({{ usersShow.user.profile}})">
   </div>
-  <div class="card-content">
-    <div class="media">
-      <div class="media-content">
-        <div class="text-wrapper">
-        <p class="title is-5" >{{usersShow.user.username}}
-        <p class="subtitle is-6">{{usersShow.user.bio}}
-        <a ui-sref="usersEdit({ id: usersShow.user._id })" class="button is-primary" ng-show="usersShow.isCurrentUser()">Edit</a>
+    <div class="card-content">
+      <div class="media">
+        <div class="media-content">
+          <div class="text-wrapper">
+            <p class="title is-5" >{{usersShow.user.username}}
+              <p class="subtitle is-6">{{usersShow.user.bio}}
+          </div>
         </div>
+        <a ui-sref="usersEdit({ id: usersShow.user._id })" class="button is-info" ng-show="usersShow.isCurrentUser()">Edit</a>
+          <button class="button is-danger" ng-click="usersShow.buttonDelete()" ng-show="usersShow.isCurrentUser()">Delete</button>
       </div>
-      <button ng-click="usersShow.buttonDelete()" ng-show="usersShow.isCurrentUser()">Delete</button>
-      <!-- -->
     </div>
-  </div>
 </div>
