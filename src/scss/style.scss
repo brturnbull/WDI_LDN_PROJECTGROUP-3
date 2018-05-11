@@ -123,6 +123,19 @@ img {
     content: '';
 }
 
+.notification {
+  text-align: center;
+  background-color: red;
+  color: white;
+  font-size: 18px;
+  margin-bottom: 0 !important;
+  padding-bottom: 0 !important;
+  height: 60px;
+}
+
+.filler {
+  height:200px;
+}
 @media screen and (max-width: 1087px) { //use of tablet from bulma
 //------------------------------------------------------------------------------
 section.ng-scope {

@@ -8,10 +8,17 @@ function RegisterCtrl($auth, $state,$rootScope) {
     $auth.signup(this.data)
       .then(() => {
         $rootScope.$broadcast('flashMessage', {
+          type: 'success',
           content: 'You are all signed up, please login'
         });
         $state.go('login');
-      });
+      })
+      .catch(
+        $rootScope.$broadcast('flashMessage', {
+          // type: 'danger',
+          content: 'Sorry - We have this email or username registered'
+        })
+      );
   }
 
   //Authenticates the users via spotify

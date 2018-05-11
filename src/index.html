@@ -31,7 +31,7 @@
 <!-- /-/-/-  /-/-/-  /-/-/-  /-/-/-  /-/-/-  /-/-/-  /-/-/-  /-/-/-  /-/-/- -->
   <ui-view ng-if="main.isHome"></ui-view>
 
-    <div ng-if="main.flashMessage.content" class="notification is-{{main.flashMessage.type}} has-background-danger">
+    <div ng-if="main.flashMessage.content" class="notification is-{{main.flashMessage.type}} ">
       {{main.flashMessage.content}}
     </div>
   <section class='section' ng-if="!main.isHome"><div class="container" ui-view></div></section>
