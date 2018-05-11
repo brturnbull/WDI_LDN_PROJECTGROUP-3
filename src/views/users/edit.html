@@ -7,14 +7,14 @@
     <label for="bio">Bio</label>
     <input class="input" placeholder="Bio" name="bio" ng-model="usersEdit.user.bio" />
   </div>
-  
+
 
   <input type="file" id="filestack" ng-model="usersEdit.user.profile" upload-image />
     <div class="field" ng-if="usersEdit.user.profile">
     <label class="label">Profile Picture Preview</label>
     <div class="control">
       <figure class="image is-128x128">
-        <img ng-src="{{usersEdit.user.profile}}">
+        <img class="show-edit-pic" ng-src="{{ usersEdit.user.profile }}">
       </figure>
     </div>
   </div>
