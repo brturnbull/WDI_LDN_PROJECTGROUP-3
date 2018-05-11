@@ -12,6 +12,8 @@ function LoginCtrl($auth, $state,$rootScope) {
         $state.go('moodsNew');
       });
   }
+
+  //Authenticates the users via spotify
   function authenticate(provider) {
 
     $auth.authenticate(provider)
@@ -22,6 +24,7 @@ function LoginCtrl($auth, $state,$rootScope) {
         $state.go('moodsNew');
       });
   }
+  
   //checking if field has been touched / dirty / submitted
   function isDanger(field){
     return (this.form[field].$error.required && this.form[field].$dirty|| this.form.$submitted);
