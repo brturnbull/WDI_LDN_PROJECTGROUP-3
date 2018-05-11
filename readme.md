@@ -1,5 +1,7 @@
 # Moodify
 
+## Heroku: https://moodifyapp.herokuapp.com/#!/
+
 ##### Elliot Yandzio, Bridget Turnbull, and Filippos Antoniadis
 
 ## Brief
@@ -7,13 +9,6 @@ ___
 
  For this project we were put into teams and given the task to design and collaboratively build a MEAN stack app of our own design. Our response to that brief was Moodify. The idea behind this was that a user could take a photo of themselves through the app, which would then use facial recognition to detect their mood and return a Spotify playlist suited to their current state.
 
- ## Technologies used
- ___
-
-- HTML
-- SCSS
-- JavaScript
-- Angular
 
 ## Approach
 ___
