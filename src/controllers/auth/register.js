@@ -20,6 +20,19 @@ function RegisterCtrl($auth, $state,$rootScope) {
         })
       );
   }
+
+  //Authenticates the users via spotify
+  function authenticate(provider) {
+
+    $auth.authenticate(provider)
+      .then(() => {
+        $rootScope.$broadcast('flashMessage', {
+          // insert message desired here
+        });
+        $state.go('moodsNew');
+      });
+  }
+
   function isDanger(field){
     return (this.form[field].$error.required && this.form[field].$touched || this.form.$submitted);
   }
@@ -27,6 +40,7 @@ function RegisterCtrl($auth, $state,$rootScope) {
   //----------------------------------------------------------------------------
   this.handleRegister = handleRegister;
   this.isDanger = isDanger;
+  this.authenticate = authenticate;
 }
 //-----------------------------------------------------------------------------
 export default RegisterCtrl;
