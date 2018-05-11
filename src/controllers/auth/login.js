@@ -6,16 +6,13 @@ function LoginCtrl($auth, $state,$rootScope) {
     // if(this.form.$invalid)return false;
     $auth.login(this.data)
       .then(() => {
-        $rootScope.$broadcast('flashMessage', {
-          // insert message desired here
-        });
         $state.go('moodsNew');
       })
-      .catch(
+      .catch(() => {
         $rootScope.$broadcast('flashMessage', {
           content: 'Login credentials incorrect'
-        })
-      );
+        });
+      });
   }
   function authenticate(provider) {
 
