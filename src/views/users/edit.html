@@ -7,20 +7,16 @@
     <label for="bio">Bio</label>
     <input class="input" placeholder="Bio" name="bio" ng-model="usersEdit.user.bio" />
   </div>
-  <!-- <div class="field">
-    <label for="profile">Profile</label>
-    <input class="input" placeholder="Profile picture" name="picture" ng-model="UsersEdit.user.profile" />
-  </div> -->
 
   <input type="file" id="filestack" ng-model="usersEdit.user.profile" upload-image />
-     <!-- <div class="field" ng-if="usersEdit.user.profile">
+     <div class="field" ng-if="usersEdit.user.profile">
     <label class="label">Profile Picture Preview</label>
     <div class="control">
       <figure class="image is-128x128">
-        <img ng-src="{{usersEdit.user.profile}}">
+        <img class="show-edit-pic" ng-src="{{ usersEdit.user.profile }}">
       </figure>
     </div>
-  </div> -->
+  </div>
   <button type="button" class="button is-info" onclick="document.getElementById('filestack').click();">Upload picture</button>
 
   <button class="button is-primary">Submit</button>
