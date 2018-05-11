@@ -9,7 +9,7 @@ function playlist(req, res, next) {
     method: 'POST',
     url: 'https://accounts.spotify.com/api/token',
     form: {
-      // setting the grant type to allow access as per spotify documentation 
+      // setting the grant type to allow access as per spotify documentation
       grant_type: 'client_credentials'
     },
     // Providing the client id and secret (stored locally in the ZSHRC file)
@@ -32,12 +32,14 @@ function playlist(req, res, next) {
         json: true
       });
     })
+    // then render the response in json to use later
     .then(response => {
       res.json(response);
     })
     .catch(next);
 }
 //------------------------------------------------------------------------------
+// export for use outisde of the controller
 module.exports = {
   playlist
 };
