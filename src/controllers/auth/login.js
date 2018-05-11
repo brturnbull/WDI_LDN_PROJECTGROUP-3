@@ -13,7 +13,6 @@ function LoginCtrl($auth, $state,$rootScope) {
       })
       .catch(
         $rootScope.$broadcast('flashMessage', {
-          // type: 'danger',
           content: 'Login credentials incorrect'
         })
       );
