@@ -3,14 +3,20 @@ LoginCtrl.$inject = ['$auth', '$state','$rootScope'];
 function LoginCtrl($auth, $state,$rootScope) {
 
   function handleLogin() {
-    if(this.form.$invalid)return false;
+    // if(this.form.$invalid)return false;
     $auth.login(this.data)
       .then(() => {
         $rootScope.$broadcast('flashMessage', {
           // insert message desired here
         });
         $state.go('moodsNew');
-      });
+      })
+      .catch(
+        $rootScope.$broadcast('flashMessage', {
+          // type: 'danger',
+          content: 'Login credentials incorrect'
+        })
+      );
   }
   function authenticate(provider) {
 
