@@ -8,7 +8,7 @@ For this project we were put into teams and given the task to design and collabo
 
 Building an application using version controllers as well as Github to deliver the project in 1 week.The choice to focus on an API heavy application using facial recognition and music was a team vision and came up naturally after dabbling with a range of ideas.
 
-##### TEAM
+#####TEAM:
 
 Elliot Yandzio - Filippos Antoniadis - Bridget Turnbull
 
